@@ -1,0 +1,46 @@
+.offer-section {
+    display: flex; /* Używamy flexbox do wyświetlenia elementów w jednej linii */
+    flex-wrap: wrap; /* W razie potrzeby zawijamy elementy do nowej linii */
+  }
+  
+  .offer-section h5 {
+    font-size: 18px;
+    color: #333333;
+    display: flex; /* Wyświetlamy nagłówek (h5) jako element flex */
+    align-items: center; /* Wyśrodkowujemy elementy w pionie */
+    margin: auto; /* Wyśrodkowujemy element w poziomie */
+  }
+  
+  .offer-section h5 span {
+    margin-right: 10px; /* Dodajemy odstęp między elementami */
+  }
+ 
+  .form-group {
+    margin-bottom: 10px; /* Dodajemy odstęp między grupami formularza */
+}
+
+.form-control {
+    flex: 1; /* Rozciągamy kontrolki formularza na całą dostępną przestrzeń */
+    margin-right: 10px; /* Dodajemy odstęp między kontrolkami */
+}
+
+.search-car {
+    background-color: #b6dee7; 
+    color: #28292f;
+    border: none;
+    padding: 5px 150px;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 50px; /* Zaokrąglamy krawędzie */
+    transition: all 0.3s ease;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Dodajemy cień */
+    margin-top: auto; /* Umieść przycisk na tej samej wysokości co komórki formularza */
+}
+
+
+.search-car:hover {
+    background-color: #387b9f; 
+    color: #fff;
+}
+
+

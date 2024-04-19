@@ -1,0 +1,40 @@
+.top-button {
+    background-color: #b6dee7;
+    color: #28292f;
+    border: none;
+    padding: 10px 60px; /* Ustaw rozmiar przycisku */
+    font-size: 20px; /* Ustaw rozmiar czcionki */
+    font-weight: bold;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.top-button:hover {
+    background-color: #387b9f;
+    color: #fff;
+}
+
+.search-btn {
+    background-color: #b6dee7;
+    color: #28292f;
+    border: none;
+}
+
+.search-btn:hover {
+    background-color: #387b9f;
+    color: #fff;
+
+}
+
+.login-btn {
+    background-color: #b6dee7;
+    color: #28292f;
+    border: none;
+    margin-left: 1;
+    margin-right: 5px;
+
+}
+.login-btn:hover {
+    background-color: #387b9f;
+    color: #fff;
+}

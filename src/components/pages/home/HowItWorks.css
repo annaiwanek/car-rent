@@ -1,0 +1,42 @@
+.how-it-works {
+    padding: 80px 0;
+    background-color: #f8f9fa;
+}
+
+.how-it-works h2 {
+    font-size: 36px;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.how-it-works p {
+    font-size: 18px;
+    color: #666;
+}
+
+.step-row {
+    margin-top: 50px;
+}
+
+.step {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.step:hover {
+    transform: translateY(-5px);
+}
+
+.step h3 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.step p {
+    font-size: 16px;
+    color: #666;
+}
