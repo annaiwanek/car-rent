@@ -4,6 +4,7 @@ import CarouselHome from '../../carousel/CarouselHome';
 import './Home.css'; // Importujemy plik CSS dla Home
 import OfferSection from './OfferSection'; // Importujemy komponent OfferSection z odpowiedniej ścieżki
 import HowItWorks from './HowItWorks'; // Importujemy komponent HowItWorks z odpowiedniej ścieżki
+import Footer from './Footer'; // Zaimportuj komponent stopki
 
 function Home() {
     return (
@@ -52,7 +53,11 @@ function Home() {
 
             {/* Sekcja "Jak to działa" */}
             <HowItWorks />
-        </Container>
+    
+
+          {/* Stopka" */}
+          <Footer />
+          </Container>
     );
 }
 
