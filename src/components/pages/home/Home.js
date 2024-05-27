@@ -4,7 +4,6 @@ import CarouselHome from '../../carousel/CarouselHome';
 import './Home.css'; 
 import OfferSection from './OfferSection'; 
 import HowItWorks from './HowItWorks'; 
-import Footer from './Footer'; 
 
 function Home() {
     return (
@@ -53,10 +52,6 @@ function Home() {
 
             {/* Sekcja "Jak to działa" */}
             <HowItWorks />
-    
-
-          {/* Stopka" */}
-          <Footer />
           </Container>
     );
 }

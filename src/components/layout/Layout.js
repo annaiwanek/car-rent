@@ -3,6 +3,7 @@ import { Container, Nav, Navbar, Button, Form, NavDropdown } from 'react-bootstr
 import { Outlet, Link } from 'react-router-dom';
 import Image from 'react-bootstrap/Image';
 import Row from 'react-bootstrap/Row';
+import Footer from './Footer'; // Import stopki
 import './Layout.css';
 
 function Layout() {
@@ -19,10 +20,11 @@ function Layout() {
                     <Navbar.Collapse id="navbarScroll">
                         <Nav className="me-auto my-2 my-lg-0" style={{ maxHeight: '100px' }} navbarScroll>
                             <Nav.Link as={Link} to="/" className="d-block">Home</Nav.Link>
-                            <Nav.Link as={Link} to="/oferta" className="d-block">Oferta</Nav.Link>
-                            <Nav.Link as={Link} to="/promocje" className="d-block">Promocje</Nav.Link>
+                            <Nav.Link as={Link} to="/offer" className="d-block">Oferta</Nav.Link>
+                            <Nav.Link as={Link} to="/promotions" className="d-block">Promocje</Nav.Link>
                             <Nav.Link as={Link} to="/rezerwacja" className="d-block">Rezerwacja</Nav.Link>
                             <Nav.Link as={Link} to="/fleet" className="d-block">Flota</Nav.Link>
+                            <Nav.Link as={Link} to="/contact" className="d-block">Kontakt</Nav.Link> 
                             <NavDropdown title="Oddziały" id="navbarScrollingDropdown">
                                 <NavDropdown.Item as={Link} to="/warszawa" className="d-block">Warszawa</NavDropdown.Item>
                                 <NavDropdown.Item as={Link} to="/krakow" className="d-block">Kraków</NavDropdown.Item>
@@ -53,9 +55,10 @@ function Layout() {
                     <Outlet />
                 </Container>
             </div>
+
+            <Footer /> 
         </div>
     );
 }
 
 export default Layout;
-

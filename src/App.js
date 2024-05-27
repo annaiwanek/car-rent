@@ -3,8 +3,10 @@ import {BrowserRouter, Routes, Route } from 'react-router-dom';
 import Layout from './components/layout/Layout';
 import Fleet from './components/pages/fleet/FleetPage';
 import Home from './components/pages/home/Home';
-import CarouselHome from './components/carousel/CarouselHome';
-import Footer from './components/pages/home/Footer'; 
+import CarouselHome from './components/carousel/CarouselHome'; 
+import Offer from './components/pages/offer/OfferPage';
+import PromotionsPage from './components/pages/promotions/PromotionsPage'; 
+import ContactPage from './components/pages/contact/ContactPage';
 
 function App() {
   return (
@@ -14,7 +16,9 @@ function App() {
             <Route index element={<Home />} />
             <Route path="fleet" element={<Fleet />} />
             <Route path="carousel" element={<CarouselHome />} />
-            <Route path="footer" element={<Footer />} />
+            <Route path="offer" element={<Offer />} />
+            <Route path="promotions" element={<PromotionsPage />} />
+            <Route path="contact" element={<ContactPage />} />
           </Route>
         </Routes>
       

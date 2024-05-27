@@ -1,0 +1,30 @@
+.contact-page {
+    padding: 2rem 0;
+  }
+  
+  .contact-page h1 {
+    font-size: 2rem;
+    color: #333;
+  }
+  
+  .contact-page .form-control {
+    margin-bottom: 1rem;
+  }
+  
+  .contact-page .promo-button {
+    background-color: #b6dee7;
+    color: #28292f;
+    border: none;
+    padding: 5px 30px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 50px; /* Zaokrąglamy krawędzie */
+    transition: all 0.3s ease;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Dodajemy cień */
+    margin-top: 10px;
+  }
+  
+  .contact-page .promo-button:hover {
+    background-color: #387b9f;
+    color: #fff;
+  }
