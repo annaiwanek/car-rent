@@ -1,10 +1,10 @@
 import React from 'react';
 import { Container, Row, Col, Form, Button } from 'react-bootstrap';
 import CarouselHome from '../../carousel/CarouselHome';
-import './Home.css'; // Importujemy plik CSS dla Home
-import OfferSection from './OfferSection'; // Importujemy komponent OfferSection z odpowiedniej ścieżki
-import HowItWorks from './HowItWorks'; // Importujemy komponent HowItWorks z odpowiedniej ścieżki
-import Footer from './Footer'; // Zaimportuj komponent stopki
+import './Home.css'; 
+import OfferSection from './OfferSection'; 
+import HowItWorks from './HowItWorks'; 
+import Footer from './Footer'; 
 
 function Home() {
     return (
@@ -17,7 +17,7 @@ function Home() {
                 <Col md={10}>
                     <Form className="d-flex flex-wrap justify-content-between align-items-center">
                         <Form.Group controlId="formCity" className="mr-2">
-                            <Form.Label>Miasto odbioru:</Form.Label>
+                            <Form.Label>Miasto odbioru</Form.Label>
                             <Form.Control as="select">
                                 <option>Warszawa</option>
                                 <option>Kraków</option>
@@ -28,12 +28,12 @@ function Home() {
                         </Form.Group>
 
                         <Form.Group controlId="formPickupDate" className="mr-2">
-                            <Form.Label>Data odbioru:</Form.Label>
+                            <Form.Label>Data odbioru</Form.Label>
                             <Form.Control type="date" />
                         </Form.Group>
 
                         <Form.Group controlId="formReturnDate" className="mr-2">
-                            <Form.Label>Data zwrotu:</Form.Label>
+                            <Form.Label>Data zwrotu</Form.Label>
                             <Form.Control type="date" />
                         </Form.Group>
 

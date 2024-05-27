@@ -1,10 +1,10 @@
 import React from 'react';
-import {BrowserRouter, Routes, Route } from 'react-router-dom'; // Dodajemy BrowserRouter
+import {BrowserRouter, Routes, Route } from 'react-router-dom'; 
 import Layout from './components/layout/Layout';
 import Fleet from './components/pages/fleet/FleetPage';
 import Home from './components/pages/home/Home';
 import CarouselHome from './components/carousel/CarouselHome';
-import Footer from './components/pages/home/Footer'; // Zaimportuj komponent stopki
+import Footer from './components/pages/home/Footer'; 
 
 function App() {
   return (

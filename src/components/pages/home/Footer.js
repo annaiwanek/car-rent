@@ -1,6 +1,6 @@
 import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
-import './Footer.css'; // Importujemy plik CSS dla stopki
+import './Footer.css'; 
 
 
 function Footer() {
