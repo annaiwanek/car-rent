@@ -1,51 +1,9 @@
+// src/components/pages/reservation/ReservationPage.js
+
 import React from 'react';
 import { Container, Row, Col, Card, Form, Button } from 'react-bootstrap';
+import carsData from '../../../data/carsData'; // Import danych samochodów
 import './ReservationPage.css';
-
-const cars = [
-  {
-    title: "Citroen C3",
-    description: "Samochody nowe, maksymalnie roczne",
-    imgSrc: "/image/car1.jpg",
-    price: "84 PLN",
-    features: ["Bezpłatne odwołanie rezerwacji", "Bez limitu km"],
-    specs: {
-      passengers: 5,
-      transmission: "Manual",
-      fuel: "5.5 l/100 km",
-      trunk: 305,
-    },
-    link: "#"
-  },
-  {
-    title: "Hyundai i30",
-    description: "Samochody nowe, maksymalnie roczne",
-    imgSrc: "/image/car2.jpg",
-    price: "104 PLN",
-    features: ["Bezpłatne odwołanie rezerwacji", "Bez limitu km"],
-    specs: {
-      passengers: 5,
-      transmission: "Automatic",
-      fuel: "5.2 l/100 km",
-      trunk: 395,
-    },
-    link: "#"
-  },
-  {
-    title: "Skoda Octavia",
-    description: "Samochody nowe, maksymalnie roczne",
-    imgSrc: "/image/car3.jpg",
-    price: "114 PLN",
-    features: ["Bezpłatne odwołanie rezerwacji", "Bez limitu km"],
-    specs: {
-      passengers: 5,
-      transmission: "Automatic",
-      fuel: "6.1 l/100 km",
-      trunk: 610,
-    },
-    link: "#"
-  }
-];
 
 function ReservationPage() {
   return (
@@ -112,7 +70,7 @@ function ReservationPage() {
           </Form>
         </Col>
         <Col md={9}>
-          {cars.map((car, index) => (
+          {carsData.map((car, index) => (
             <Card key={index} className="mb-4 car-card">
               <Card.Img variant="top" src={car.imgSrc} alt={car.title} />
               <Card.Body>

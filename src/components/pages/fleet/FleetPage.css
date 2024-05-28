@@ -1,0 +1,66 @@
+/* FleetPage.css */
+
+.fleet-page {
+    padding: 20px;
+  }
+  
+  .section-title {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2rem;
+  }
+  
+  .car-card {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s;
+  }
+  
+  .car-card:hover {
+    transform: scale(1.05);
+  }
+  
+  .car-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .car-features {
+    list-style-type: none;
+    padding: 0;
+    margin: 10px 0;
+  }
+  
+  .car-features li {
+    margin-bottom: 5px;
+  }
+  
+  .car-price {
+    font-size: 1.2rem;
+    color: #333;
+    margin-top: 1rem;
+  }
+  
+  .promo-button {
+    background-color: #b6dee7;
+    color: #28292f;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    margin-top: 10px;
+  }
+  
+  .promo-button:hover {
+    background-color: #387b9f;
+    color: #fff;
+  }
+  
