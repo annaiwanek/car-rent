@@ -24,6 +24,7 @@ function Layout() {
                             <Nav.Link as={Link} to="/promotions" className="d-block">Promocje</Nav.Link>
                             <Nav.Link as={Link} to="/reservation" className="d-block">Rezerwacja</Nav.Link>
                             <Nav.Link as={Link} to="/fleet" className="d-block">Flota</Nav.Link>
+                            <Nav.Link as={Link} to="/faq">FAQ</Nav.Link>
                             <Nav.Link as={Link} to="/contact" className="d-block">Kontakt</Nav.Link> 
                             <NavDropdown title="Oddziały" id="navbarScrollingDropdown">
                                 <NavDropdown.Item as={Link} to="/warszawa" className="d-block">Warszawa</NavDropdown.Item>
