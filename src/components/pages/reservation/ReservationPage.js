@@ -5,7 +5,7 @@ import './ReservationPage.css';
 const cars = [
   {
     title: "Citroen C3",
-    description: "lub podobny / Samochody nowe, maksymalnie roczne",
+    description: "Samochody nowe, maksymalnie roczne",
     imgSrc: "/image/car1.jpg",
     price: "84 PLN",
     features: ["Bezpłatne odwołanie rezerwacji", "Bez limitu km"],
@@ -19,7 +19,7 @@ const cars = [
   },
   {
     title: "Hyundai i30",
-    description: "lub podobny / Samochody nowe, maksymalnie roczne",
+    description: "Samochody nowe, maksymalnie roczne",
     imgSrc: "/image/car2.jpg",
     price: "104 PLN",
     features: ["Bezpłatne odwołanie rezerwacji", "Bez limitu km"],
@@ -33,7 +33,7 @@ const cars = [
   },
   {
     title: "Skoda Octavia",
-    description: "lub podobny / Samochody nowe, maksymalnie roczne",
+    description: "Samochody nowe, maksymalnie roczne",
     imgSrc: "/image/car3.jpg",
     price: "114 PLN",
     features: ["Bezpłatne odwołanie rezerwacji", "Bez limitu km"],
@@ -54,27 +54,27 @@ function ReservationPage() {
         <Col md={3}>
           <Form className="filter-form reservation-form">
             <h5 className="section-title">Szczegóły rezerwacji</h5>
-            <Form.Group controlId="formLocation" className="mb-3">
-              <Form.Label>Miasto odbioru</Form.Label>
+            <Form.Group controlId="formLocation" className="mb-4">
               <Form.Control as="select" className="custom-select">
                 <option>Wybierz miasto lub lotnisko</option>
-                <option>Warszawa, Ilzecka 26E</option>
+                <option>Warszawa, Łużycka 26E</option>
                 <option>Kraków, Rynek 10</option>
               </Form.Control>
             </Form.Group>
             <Form.Check 
               type="checkbox" 
               label="Zwróć samochód w innej lokalizacji" 
-              className="mb-3" 
+              className="mb-4 form-check" 
+              style={{ marginLeft: '5px' }}
             />
-            <Form.Group controlId="formPickupDate" className="mb-3">
+            <Form.Group controlId="formPickupDate" className="mb-4">
               <Form.Label>Data odbioru</Form.Label>
               <div className="date-time-picker">
                 <Form.Control type="date" className="date-picker" />
                 <Form.Control type="time" className="time-picker" />
               </div>
             </Form.Group>
-            <Form.Group controlId="formReturnDate" className="mb-3">
+            <Form.Group controlId="formReturnDate" className="mb-4">
               <Form.Label>Data zwrotu</Form.Label>
               <div className="date-time-picker">
                 <Form.Control type="date" className="date-picker" />
@@ -84,13 +84,13 @@ function ReservationPage() {
             <Form.Check 
               type="checkbox" 
               label="Wiek kierowcy poniżej 21 lat" 
-              className="mb-3" 
+              className="mb-4 form-check" 
             />
             <Button variant="primary" type="submit" className="search-car">Wyszukaj samochód</Button>
           </Form>
           <Form className="filter-form filters mt-5">
             <h5 className="section-title">Filtry</h5>
-            <Form.Group controlId="formType" className="mb-3">
+            <Form.Group controlId="formType" className="mb-5">
               <Form.Label>Typ pojazdu</Form.Label>
               <Form.Check type="checkbox" label="Pokaż wszystko" className="form-check" />
               <Form.Check type="checkbox" label="Limuzyny" className="form-check" />
@@ -99,12 +99,12 @@ function ReservationPage() {
               <Form.Check type="checkbox" label="Minibusy" className="form-check" />
               <Form.Check type="checkbox" label="Coupe / Sportowe" className="form-check" />
             </Form.Group>
-            <Form.Group controlId="formTransmission" className="mb-3">
+            <Form.Group controlId="formTransmission" className="mb-4">
               <Form.Label>Skrzynia biegów</Form.Label>
               <Form.Check type="checkbox" label="Ręczna" className="form-check" />
               <Form.Check type="checkbox" label="Automatyczna" className="form-check" />
             </Form.Group>
-            <Form.Group controlId="formPrice" className="mb-3">
+            <Form.Group controlId="formPrice" className="mb-4">
               <Form.Label>Cena</Form.Label>
               <Form.Check type="checkbox" label="Rosnąco" className="form-check" />
               <Form.Check type="checkbox" label="Malejąco" className="form-check" />
@@ -112,7 +112,6 @@ function ReservationPage() {
           </Form>
         </Col>
         <Col md={9}>
-          <h1 className="my-5 text-center">Warszawa, dostępne samochody: 24</h1>
           {cars.map((car, index) => (
             <Card key={index} className="mb-4 car-card">
               <Card.Img variant="top" src={car.imgSrc} alt={car.title} />
