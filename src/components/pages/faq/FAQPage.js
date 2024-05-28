@@ -1,10 +1,11 @@
 import React from 'react';
 import { Accordion, Container } from 'react-bootstrap';
+import './FAQPage.css';
 
 const FAQPage = () => {
   return (
-    <Container>
-      <h2>Najczęściej zadawane pytania</h2>
+    <Container className="faq-page">
+      <h2 className="faq-title">Najczęściej zadawane pytania</h2>
       <Accordion>
         <Accordion.Item eventKey="0">
           <Accordion.Header>Wynajem krótkoterminowy</Accordion.Header>

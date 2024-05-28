@@ -29,4 +29,28 @@
   .accordion .card-body {
     background-color: #fff;
   }
+
+  .faq-page {
+    margin-bottom: 50px; /* Adjust this value for more space between FAQ and footer */
+  }
   
+  .faq-title {
+    text-align: left;
+    font-size: 1.5rem; /* Adjust this value to change the font size */
+    margin-bottom: 20px;
+  }
+
+/* Styl dla nagłówków Accordion (rozwijanych sekcji) */
+.accordion-button:not(.collapsed) {
+  background-color: #387b9f; /* Ustaw kolor podświetlenia na kolor tła stopki */
+  color: white; /* Ustaw kolor czcionki na biały */
+}
+
+.accordion-button {
+  color: #000; /* Ustaw domyślny kolor czcionki na czarny */
+}
+
+/* Styl dla zawartości Accordion (treści rozwijanych sekcji) */
+.accordion-body {
+  color: #000; /* Ustaw kolor czcionki na czarny */
+}
