@@ -6,21 +6,21 @@ const offers = [
   {
     title: "Samochody Osobowe",
     description: "Wynajmij nowoczesne i ekonomiczne samochody osobowe.",
-    imgSrc: "/image/c4.jpg",
+    imgSrc: "/image/c4.webp",
     width: 600,
     height: 400
   },
   {
     title: "Samochody Dostawcze",
     description: "Idealne do przewozu towarów w mieście i na długie trasy.",
-    imgSrc: "/image/c5.jpg",
+    imgSrc: "/image/c5.webp",
     width: 600,
     height: 400
   },
   {
     title: "Samochody Luksusowe",
     description: "Ciesz się komfortem i luksusem podczas jazdy.",
-    imgSrc: "/image/c6.jpg",
+    imgSrc: "/image/c6.webp",
     width: 600,
     height: 400
   }

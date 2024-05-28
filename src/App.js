@@ -7,6 +7,7 @@ import CarouselHome from './components/carousel/CarouselHome';
 import Offer from './components/pages/offer/OfferPage';
 import PromotionsPage from './components/pages/promotions/PromotionsPage'; 
 import ContactPage from './components/pages/contact/ContactPage';
+import ReservationPage from './components/pages/reservation/ReservationPage'; 
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
             <Route path="offer" element={<Offer />} />
             <Route path="promotions" element={<PromotionsPage />} />
             <Route path="contact" element={<ContactPage />} />
+            <Route path="reservation" element={<ReservationPage />} />
           </Route>
         </Routes>
       

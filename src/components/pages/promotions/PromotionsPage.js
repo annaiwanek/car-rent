@@ -6,19 +6,19 @@ const promotions = [
   {
     title: "Promocja długoterminowa",
     description: "Gdy potrzebujesz auta na dłużej!",
-    imgSrc: "/image/promo1.jpg",
+    imgSrc: "/image/promo1.webp",
     link: "#"
   },
   {
     title: "Promocja weekendowa",
     description: "Płacisz za 2 dni, jeździsz 3!",
-    imgSrc: "/image/promo2.jpg",
+    imgSrc: "/image/promo2.webp",
     link: "#"
   },
   {
     title: "Promocja wakacyjna",
     description: "Jedź na urlop z CAR RENT!",
-    imgSrc: "/image/promo3.jpg",
+    imgSrc: "/image/promo3.webp",
     link: "#"
   }
 ];
