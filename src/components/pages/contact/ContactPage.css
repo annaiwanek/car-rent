@@ -1,30 +1,55 @@
+/* ContactPage.css */
+
+/* Stylizacja sekcji kontaktu */
 .contact-page {
-    padding: 2rem 0;
-  }
-  
-  .contact-page h1 {
-    font-size: 2rem;
-    color: #333;
-  }
-  
-  .contact-page .form-control {
-    margin-bottom: 1rem;
-  }
-  
-  .contact-page .promo-button {
-    background-color: #b6dee7;
-    color: #28292f;
-    border: none;
-    padding: 5px 30px;
-    font-size: 16px;
-    font-weight: bold;
-    border-radius: 50px; /* Zaokrąglamy krawędzie */
-    transition: all 0.3s ease;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Dodajemy cień */
-    margin-top: 10px;
-  }
-  
-  .contact-page .promo-button:hover {
-    background-color: #387b9f;
-    color: #fff;
-  }
+  padding: 2rem 0;
+}
+
+.contact-page h1 {
+  font-size: 2rem;
+  color: #333;
+}
+
+/* Stylizacja pól formularza */
+.contact-page .form-control {
+  margin-bottom: 1rem;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+/* Podświetlenie pól formularza */
+.contact-page .form-control:focus {
+ border-color: #b6dee7;
+  color: #333;
+}
+
+.contact-page .form-control::placeholder {
+  color: #888;
+}
+
+/* Stylizacja przycisku wysyłania */
+.contact-page .promo-button {
+  background-color: #b6dee7;
+  color: #28292f;
+  border: none;
+  padding: 5px 30px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 50px; /* Zaokrąglamy krawędzie */
+  transition: all 0.3s ease;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Dodajemy cień */
+  margin-top: 10px;
+}
+
+/* Podświetlenie przycisku wysyłania */
+.contact-page .promo-button:hover {
+  background-color: #387b9f;
+  color: #fff;
+}
+
+/* Zwiększenie odległości między stopką a przyciskiem wysyłania */
+.contact-page .contact-footer-space {
+  height: 40px;
+}

@@ -65,6 +65,7 @@ function ContactPage() {
           />
         </Form.Group>
         <Button variant="primary" type="submit" className="promo-button mt-3">Wyślij</Button>
+        <div className="contact-footer-space"></div>
       </Form>
     </Container>
   );
