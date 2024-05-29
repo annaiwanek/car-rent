@@ -8,14 +8,14 @@
   }
   
   .offer-page .card {
-    transition: transform 0.2s;
+    transition: transform 0.1s;
     will-change: transform;
   }
   
   .offer-page .card:hover {
     transform: scale(1.05);
   }
-  
+
   .offer-page .card img {
     height: 250px;
     object-fit: cover;

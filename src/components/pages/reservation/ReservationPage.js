@@ -2,6 +2,7 @@ import React from 'react';
 import { Container, Row, Col, Card, Form, Button } from 'react-bootstrap';
 import carsData from '../../../data/carsData'; // Import danych samochodów
 import './ReservationPage.css';
+import '../../../data/carsData.css'; // Import wspólnych stylów dla samochodów
 
 function ReservationPage() {
   return (

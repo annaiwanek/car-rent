@@ -2,6 +2,7 @@ import React from 'react';
 import { Container, Row, Col, Card, Button } from 'react-bootstrap';
 import './FleetPage.css';
 import carsData from '../../../data/carsData'; // Import danych samochodów
+import '../../../data/carsData.css'; // Import wspólnych stylów dla samochodów
 
 function FleetPage() {
   return (

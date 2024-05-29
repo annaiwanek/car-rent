@@ -1,0 +1,58 @@
+.car-card .card-title {
+    font-size: 1.2rem; /* Zwiększenie rozmiaru czcionki tytułu */
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #387b9f; /* Dodanie koloru do tytułu */
+  }
+  
+  .car-card .card-text {
+    font-size: 1rem; /* Zwiększenie rozmiaru czcionki opisu */
+    color: #555; /* Zmiana koloru czcionki opisu */
+    margin-bottom: 15px;
+  }
+  
+  .car-features {
+    list-style-type: none;
+    padding: 0;
+    font-size: 0.9rem; /* Zmniejszenie rozmiaru czcionki listy cech */
+    color: #444; /* Zmiana koloru czcionki cech */
+  }
+  
+  .car-features li {
+    margin-bottom: 5px;
+  }
+  
+  .car-specs {
+    font-size: 0.9rem; /* Zmniejszenie rozmiaru czcionki specyfikacji */
+    color: #666; /* Zmiana koloru czcionki specyfikacji */
+  }
+  
+  .car-specs .spec-item {
+    margin-bottom: 5px; /* Dodanie odstępu między specyfikacjami */
+  }
+  
+  .car-price {
+    font-size: 1.2rem; /* Zwiększenie rozmiaru czcionki ceny */
+    color: #333; /* Zmiana koloru czcionki ceny */
+    margin-top: 1rem;
+    font-weight: bold; /* Podkreślenie ceny */
+  }
+  
+  .promo-button {
+    background-color: #b6dee7;
+    color: #28292f;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    margin-top: 10px;
+  }
+  
+  .promo-button:hover {
+    background-color: #387b9f;
+    color: #fff;
+  }
+  

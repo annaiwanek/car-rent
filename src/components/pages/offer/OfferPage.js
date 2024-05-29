@@ -6,7 +6,7 @@ const offers = [
   {
     title: "Samochody Osobowe",
     description: "Wynajmij nowoczesne i ekonomiczne samochody osobowe.",
-    imgSrc: "/image/c4.webp",
+    imgSrc: "/image/skodaOctavia.webp",
     width: 600,
     height: 400
   },
