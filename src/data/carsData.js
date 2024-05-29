@@ -1,10 +1,8 @@
-// src/data/carsData.js
-
 const carsData = [
     {
       title: "Citroen C3",
       description: "Samochody nowe, maksymalnie roczne",
-      imgSrc: "/image/c1.jpg",
+      imgSrc: "/image/citroenc3.webp",
       price: "84 PLN",
       features: ["Bezpłatne odwołanie rezerwacji", "Bez limitu km"],
       specs: {
@@ -18,7 +16,7 @@ const carsData = [
     {
       title: "Hyundai i30",
       description: "Samochody nowe, maksymalnie roczne",
-      imgSrc: "/image/c2.jpg",
+      imgSrc: "/image/hyundaii30.webp",
       price: "104 PLN",
       features: ["Bezpłatne odwołanie rezerwacji", "Bez limitu km"],
       specs: {
@@ -32,7 +30,7 @@ const carsData = [
     {
       title: "Skoda Octavia",
       description: "Samochody nowe, maksymalnie roczne",
-      imgSrc: "/image/c3.jpg",
+      imgSrc: "/image/skodaOctavia.webp",
       price: "114 PLN",
       features: ["Bezpłatne odwołanie rezerwacji", "Bez limitu km"],
       specs: {
