@@ -1,5 +1,3 @@
-// src/components/pages/reservation/ReservationPage.js
-
 import React from 'react';
 import { Container, Row, Col, Card, Form, Button } from 'react-bootstrap';
 import carsData from '../../../data/carsData'; // Import danych samochodów
@@ -48,7 +46,7 @@ function ReservationPage() {
           </Form>
           <Form className="filter-form filters mt-5">
             <h5 className="section-title">Filtry</h5>
-            <Form.Group controlId="formType" className="mb-5">
+            <Form.Group controlId="formType" className="mb-4">
               <Form.Label>Typ pojazdu</Form.Label>
               <Form.Check type="checkbox" label="Pokaż wszystko" className="form-check" />
               <Form.Check type="checkbox" label="Limuzyny" className="form-check" />

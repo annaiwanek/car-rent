@@ -1,4 +1,4 @@
-/* Stylizacja sekcji szczegółów rezerwacji */
+
 .reservation-form {
   border: 2px solid #b6dee7;
   border-radius: 8px;
@@ -88,6 +88,18 @@
   margin-bottom: 0.5rem;
 }
 
+.filters .form-group {
+  margin-bottom: 1.5rem; /* Standardowy margines dla wszystkich sekcji */
+}
+
+.filters .form-group#formType {
+  margin-bottom: 1rem; /* Mniejszy odstęp dla sekcji Typ pojazdu */
+}
+
+.filters .form-group#formTransmission {
+  margin-bottom: 1.5rem; /* Standardowy margines dla sekcji Skrzynia biegów */
+}
+
 .form-check-input {
   background-color: #fff;
   border: 1px solid #b6dee7;
@@ -150,11 +162,6 @@
   color: #fff;
 }
 
-/* Dodanie marginesów między sekcjami filtrów */
-.filters .form-group {
-  margin-bottom: 1.5rem;
-}
-
 /* Wyrównanie tekstu i checkboxów */
 .filters .form-check-label {
   margin-left: 5px; /* Dostosowanie do lewej strony */
@@ -164,23 +171,6 @@
   display: flex;
   align-items: center;
   margin-bottom: 1rem;
-}
-
-/* Poprawienie marginesu między sekcjami filtrów */
-.filters .form-group .form-label {
-  margin-bottom: 0.5rem;
-}
-
-.filters .form-group:first-child .form-check:first-child {
-  margin-top: 0.5rem;
-}
-
-.filters .form-group:nth-child(2) .form-check:first-child {
-  margin-top: 0.5rem;
-}
-
-.filters .form-group:nth-child(3) .form-check:first-child {
-  margin-top: 0.5rem;
 }
 
 /* Ustawienie szerokości zdjęcia w karcie samochodu */
@@ -206,4 +196,36 @@
 
 .reservation-form .form-check-label {
   margin-left: 5px;
+}
+
+/* Dodaj te style do pliku ReservationPage.css */
+
+/* Ustawienie stylów dla pól kalendarza */
+.date-picker, .time-picker {
+  background-color: #f0f9fb;
+  border: 2px solid #b6dee7;
+  color: #387b9f;
+}
+
+.date-picker:focus, .time-picker:focus {
+  border-color: #387b9f;
+  box-shadow: 0 0 5px rgba(56, 123, 159, 0.5);
+}
+
+/* Ustawienie stylów dla list rozwijanych */
+.custom-select {
+  background-color: #f0f9fb;
+  border: 2px solid #b6dee7;
+  color: #387b9f;
+}
+
+.custom-select:focus {
+  border-color: #387b9f;
+  box-shadow: 0 0 5px rgba(56, 123, 159, 0.5);
+}
+
+/* Ustawienie kolorów dla opcji w listach rozwijanych */
+.custom-select option {
+  background-color: #f0f9fb;
+  color: #387b9f;
 }
