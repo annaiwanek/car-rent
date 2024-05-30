@@ -41,6 +41,7 @@ function Offer() {
                 loading="lazy" 
                 width={offer.width}
                 height={offer.height} 
+                className="offer-img"
               />
               <Card.Body>
                 <Card.Title>{offer.title}</Card.Title>

@@ -1,3 +1,8 @@
+.promotions-page {
+  padding: 20px 10;
+  margin-bottom: 40px; /* Dodanie marginesu dolnego, aby zwiększyć odstęp od stopki */
+}
+
 .promotions-page .card {
     transition: transform 0.2s;
     will-change: transform;
@@ -5,17 +10,20 @@
   
   .promotions-page .card:hover {
     transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* dodanie cienia podkreślającego kartę */
   }
   
   .promotions-page h1 {
-    font-size: 2rem;
+    font-size: 36px;
     color: #333;
     margin-bottom: 2rem;
   }
   
   .promotions-page .card img {
-    height: 200px;
+    height: auto;
+    width: auto;
     object-fit: cover;
+    transition: transform 0.2s; /* płynne skalowanie obrazu */
   }
   
   .promotions-page .promo-button {
@@ -36,3 +44,16 @@
     color: #fff;
   }
   
+  .promotions-page .card-body {
+    text-align: center;
+  }
+  
+  .promotions-page .card-title {
+    font-size: 1.5rem;
+    margin-top: 10px;
+  }
+  
+  .promotions-page .card-text {
+    font-size: 1rem;
+    color: #666;
+  }
