@@ -3,7 +3,7 @@ import { Container, Nav, Navbar, Button, Form, NavDropdown, Col } from 'react-bo
 import { Outlet, Link } from 'react-router-dom';
 import Image from 'react-bootstrap/Image';
 import Row from 'react-bootstrap/Row';
-import Footer from './Footer'; // Import stopki
+import Footer from './Footer'; 
 import './Layout.css';
 
 function Layout() {
