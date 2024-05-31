@@ -1,4 +1,3 @@
-/* Stylizacja sekcji kontaktu */
 .contact-page {
   padding: 2rem 0;
 }
@@ -6,6 +5,33 @@
 .contact-page h1 {
   font-size: 2rem;
   color: #333;
+  text-align: left; /* Wyrównanie do lewej dla "Kontakt" */
+}
+
+.contact-page h2 {
+  font-size: 2rem;
+  color: #333;
+  text-align: center; /* Wyrównanie do środka dla "Wyślij wiadomość" */
+  margin-top: 3rem; /* Dodanie większego marginesu nad sekcją formularza */
+}
+
+/* Stylizacja sekcji informacji kontaktowych */
+.contact-info h3 {
+  font-size: 1.5rem;
+  color: #387b9f;
+  margin-bottom: 10px;
+  text-align: left; /* Wyrównanie do lewej */
+}
+
+.contact-info p {
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 20px;
+  text-align: left; /* Wyrównanie do lewej */
+}
+
+.contact-info .address-section {
+  margin-top: 20px; /* Dodanie przerwy przed sekcją "Adres do korespondencji" */
 }
 
 /* Stylizacja pól formularza */
@@ -54,7 +80,7 @@
 
 /* Responsywność dla mniejszych ekranów */
 @media (max-width: 576px) {
-  .contact-page h1 {
+  .contact-page h1, .contact-page h2 {
     font-size: 1.5rem;
   }
 
@@ -66,5 +92,13 @@
   .contact-page .promo-button {
     padding: 5px 20px;
     font-size: 14px;
+  }
+
+  .contact-info h3 {
+    font-size: 1.2rem;
+  }
+
+  .contact-info p {
+    font-size: 0.9rem;
   }
 }
