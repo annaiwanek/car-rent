@@ -1,15 +1,18 @@
+/* Stylizacja stopki */
 .footer {
     background-color: #387b9f;
     color: #fff;
     padding: 60px 0;
 }
 
+/* Stylizacja nagłówków w stopce */
 .footer h5 {
     font-size: 20px;
     margin-bottom: 20px;
     color: #b6dee7;
 }
 
+/* Stylizacja list w stopce */
 .footer ul {
     list-style-type: none;
     padding: 0;
@@ -23,6 +26,7 @@
     color: #b6dee7;
 }
 
+/* Stylizacja tekstu w stopce */
 .footer p {
     font-size: 14px;
 }
@@ -33,4 +37,19 @@
 
 .footer p a:hover {
     text-decoration: underline;
+}
+
+/* Media queries dla responsywności */
+@media (max-width: 576px) {
+    .footer {
+        padding: 30px 0; /* Zmniejszenie paddingu dla małych ekranów */
+    }
+
+    .footer h5 {
+        font-size: 18px; /* Zmniejszenie rozmiaru czcionki nagłówków */
+    }
+
+    .footer p {
+        font-size: 12px; /* Zmniejszenie rozmiaru czcionki tekstu */
+    }
 }

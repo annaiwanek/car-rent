@@ -1,0 +1,40 @@
+
+.carousel-image {
+    height: 600px; /* Ustawienie wysokości obrazów */
+    object-fit: cover; /* Zachowanie proporcji obrazów */
+  }
+  
+  /* Media queries dla responsywności */
+  @media (max-width: 768px) {
+    .carousel-image {
+      height: 400px; /* Zmniejszenie wysokości dla średnich ekranów */
+    }
+  
+    .carousel-caption h1 {
+      font-size: 24px; /* Zmniejszenie rozmiaru czcionki nagłówka */
+    }
+  
+    .carousel-caption p {
+      font-size: 14px; /* Zmniejszenie rozmiaru czcionki opisu */
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .carousel-image {
+      height: 300px; /* Zmniejszenie wysokości dla małych ekranów */
+    }
+  
+    .carousel-caption h1 {
+      font-size: 20px; /* Zmniejszenie rozmiaru czcionki nagłówka */
+    }
+  
+    .carousel-caption p {
+      font-size: 12px; /* Zmniejszenie rozmiaru czcionki opisu */
+    }
+  }
+  
+  /* Stylizacja kontenera karuzeli */
+  .carousel-container {
+    padding: 0;
+  }
+  

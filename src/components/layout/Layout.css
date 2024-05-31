@@ -1,3 +1,4 @@
+/* Stylizacja przycisku "Rozpocznij swoją rezerwację" */
 .top-button {
     background-color: #b6dee7;
     color: #28292f;
@@ -14,6 +15,7 @@
     color: #fff;
 }
 
+/* Stylizacja przycisku wyszukiwania */
 .search-btn {
     background-color: #b6dee7;
     color: #28292f;
@@ -23,18 +25,33 @@
 .search-btn:hover {
     background-color: #387b9f;
     color: #fff;
-
 }
 
+/* Stylizacja przycisku logowania */
 .login-btn {
     background-color: #b6dee7;
     color: #28292f;
     border: none;
-    margin-left: 1;
+    margin-left: 1px;
     margin-right: 5px;
-
 }
+
 .login-btn:hover {
     background-color: #387b9f;
     color: #fff;
+}
+
+/* Stylizacja logo */
+.logo {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+}
+
+/* Zapewnienie responsywności dla przycisku w headerze */
+@media (max-width: 576px) {
+    .top-button {
+        padding: 5px 30px; /* Zmniejszenie rozmiaru przycisku dla małych ekranów */
+        font-size: 16px; /* Zmniejszenie rozmiaru czcionki dla małych ekranów */
+    }
 }

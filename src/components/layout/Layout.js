@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Nav, Navbar, Button, Form, NavDropdown } from 'react-bootstrap';
+import { Container, Nav, Navbar, Button, Form, NavDropdown, Col } from 'react-bootstrap';
 import { Outlet, Link } from 'react-router-dom';
 import Image from 'react-bootstrap/Image';
 import Row from 'react-bootstrap/Row';
@@ -40,22 +40,24 @@ function Layout() {
                             />
                             <Button variant="outline-success" className="search-btn">Szukaj</Button>
                         </Form>
-                        <Button as={Link} to="/logowanie" className="login-btn">Zaloguj się</Button>
+                        <Button as={Link} to="/logowanie" className="login-btn">Zaloguj</Button>
                     </Navbar.Collapse>
                 </Container>
             </Navbar>
 
-            <Row className="justify-content-center my-4">
-                <Button variant="info" size="lg" className="b-2 top-button">
-                    ROZPOCZNIJ SWOJĄ REZERWACJĘ
-                </Button>
-            </Row>
+            <Container fluid>
+                <Row className="justify-content-center my-4">
+                    <Button variant="info" size="lg" className="b-2 top-button">
+                        ROZPOCZNIJ SWOJĄ REZERWACJĘ
+                    </Button>
+                </Row>
 
-            <div className="px-1">
-                <Container fluid>
-                    <Outlet />
-                </Container>
-            </div>
+                <Row>
+                    <Col>
+                        <Outlet />
+                    </Col>
+                </Row>
+            </Container>
 
             <Footer /> 
         </div>

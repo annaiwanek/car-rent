@@ -6,7 +6,7 @@ import '../../../data/carsData.css'; // Import wspólnych stylów dla samochodó
 
 function FleetPage() {
   return (
-    <Container className="fleet-page">
+    <Container fluid className="fleet-page">
       <h2 className="section-title">Nasza Flota</h2>
       <Row>
         {carsData.map((car, index) => (

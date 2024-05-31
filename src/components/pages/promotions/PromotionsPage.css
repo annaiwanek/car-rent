@@ -4,8 +4,9 @@
 }
 
 .promotions-page .card {
-    transition: transform 0.2s;
+    transition: transform 0.2s, box-shadow 0.2s;
     will-change: transform;
+    justify-content: space-between;
   }
   
   .promotions-page .card:hover {
@@ -57,3 +58,5 @@
     font-size: 1rem;
     color: #666;
   }
+
+  

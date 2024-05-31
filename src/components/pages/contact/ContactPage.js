@@ -28,7 +28,7 @@ function ContactPage() {
       <h1 className="my-5 text-center">Kontakt</h1>
       <Form onSubmit={handleSubmit}>
         <Row>
-          <Col md={6}>
+          <Col xs={12} md={6} className="mb-3">
             <Form.Group controlId="formName">
               <Form.Label>Imię i nazwisko</Form.Label>
               <Form.Control 
@@ -40,7 +40,7 @@ function ContactPage() {
               />
             </Form.Group>
           </Col>
-          <Col md={6}>
+          <Col xs={12} md={6} className="mb-3">
             <Form.Group controlId="formEmail">
               <Form.Label>Email</Form.Label>
               <Form.Control 

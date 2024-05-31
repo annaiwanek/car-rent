@@ -6,9 +6,9 @@ import '../../../data/carsData.css'; // Import wspólnych stylów dla samochodó
 
 function ReservationPage() {
   return (
-    <Container className="reservation-page">
+    <Container fluid className="reservation-page">
       <Row>
-        <Col md={3}>
+        <Col md={3} sm={12} xs={12}>
           <Form className="filter-form reservation-form">
             <h5 className="section-title">Szczegóły rezerwacji</h5>
             <Form.Group controlId="formLocation" className="mb-4">
@@ -68,7 +68,7 @@ function ReservationPage() {
             </Form.Group>
           </Form>
         </Col>
-        <Col md={9}>
+        <Col md={9} sm={12} xs={12}>
           {carsData.map((car, index) => (
             <Card key={index} className="mb-4 car-card">
               <Card.Img variant="top" src={car.imgSrc} alt={car.title} />

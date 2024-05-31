@@ -2,13 +2,12 @@ import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import './Footer.css'; 
 
-
 function Footer() {
     return (
         <footer className="footer">
             <Container>
                 <Row>
-                    <Col md={4}>
+                    <Col md={4} sm={6} xs={12}>
                         <h5>Informacje</h5>
                         <ul>
                             <li>O nas</li>
@@ -16,7 +15,7 @@ function Footer() {
                             <li>Polityka prywatności</li>
                         </ul>
                     </Col>
-                    <Col md={4}>
+                    <Col md={4} sm={6} xs={12}>
                         <h5>Kontakt</h5>
                         <ul>
                             <li>Telefon: 123-456-789</li>
@@ -24,7 +23,7 @@ function Footer() {
                             <li>Adres: ul. Przykładowa 123, 00-000 Warszawa</li>
                         </ul>
                     </Col>
-                    <Col md={4}>
+                    <Col md={4} sm={6} xs={12}>
                         <h5>Wsparcie</h5>
                         <ul>
                             <li>FAQ</li>

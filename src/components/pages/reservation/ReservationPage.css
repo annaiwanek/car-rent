@@ -198,8 +198,6 @@
   margin-left: 5px;
 }
 
-/* Dodaj te style do pliku ReservationPage.css */
-
 /* Ustawienie stylów dla pól kalendarza */
 .date-picker, .time-picker {
   background-color: #f0f9fb;
@@ -228,4 +226,24 @@
 .custom-select option {
   background-color: #f0f9fb;
   color: #387b9f;
+}
+
+
+/* Stylizacja dla małych ekranów */
+@media (max-width: 576px) {
+  .reservation-page {
+    padding: 30px 0; /* Zmniejszenie paddingu dla małych ekranów */
+  }
+
+  .section-title {
+    font-size: 18px; /* Zmniejszenie rozmiaru czcionki nagłówków */
+  }
+
+  .car-card .card-title {
+    font-size: 14px; /* Zmniejszenie rozmiaru czcionki tytułów */
+  }
+
+  .car-card .card-text, .car-card .car-price {
+    font-size: 12px; /* Zmniejszenie rozmiaru czcionki tekstu */
+  }
 }

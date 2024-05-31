@@ -1,4 +1,3 @@
-/* FAQPage.css */
 
 .faq-page {
     padding: 20px;
@@ -31,12 +30,12 @@
   }
 
   .faq-page {
-    margin-bottom: 50px; /* Adjust this value for more space between FAQ and footer */
+    margin-bottom: 50px; 
   }
   
   .faq-title {
     text-align: left;
-    font-size: 1.5rem; /* Adjust this value to change the font size */
+    font-size: 1.5rem; 
     margin-bottom: 20px;
   }
 
@@ -53,4 +52,22 @@
 /* Styl dla zawartości Accordion (treści rozwijanych sekcji) */
 .accordion-body {
   color: #000; /* Ustaw kolor czcionki na czarny */
+}
+
+/* Responsywność dla mniejszych ekranów */
+@media (max-width: 576px) {
+  .contact-page h1 {
+    font-size: 1.5rem;
+  }
+
+  .contact-page .form-control {
+    padding: 8px;
+    font-size: 14px;
+  }
+
+  .contact-page .promo-button {
+    padding: 5px 20px;
+    font-size: 14px;
+  }
+
 }
