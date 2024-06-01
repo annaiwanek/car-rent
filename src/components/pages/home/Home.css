@@ -1,46 +1,90 @@
+/* Home.css */
+
+/* Stylizacja sekcji ofertowej */
 .offer-section {
-    display: flex; /* Używamy flexbox do wyświetlenia elementów w jednej linii */
-    flex-wrap: wrap; /* W razie potrzeby zawijamy elementy do nowej linii */
-  }
-  
-  .offer-section h5 {
-    font-size: 18px;
-    color: #333333;
-    display: flex; /* Wyświetlamy nagłówek (h5) jako element flex */
-    align-items: center; /* Wyśrodkowujemy elementy w pionie */
-    margin: auto; /* Wyśrodkowujemy element w poziomie */
-  }
-  
-  .offer-section h5 span {
-    margin-right: 10px; /* Dodajemy odstęp między elementami */
-  }
- 
-  .form-group {
-    margin-bottom: 10px; /* Dodajemy odstęp między grupami formularza */
+  display: flex;
+  flex-wrap: wrap;
 }
 
-.form-control {
-    flex: 1; /* Rozciągamy kontrolki formularza na całą dostępną przestrzeń */
-    margin-right: 10px; /* Dodajemy odstęp między kontrolkami */
+.offer-section h5 {
+  font-size: 18px;
+  color: #333333;
+  display: flex;
+  align-items: center;
+  margin: auto;
+}
+
+.offer-section h5 span {
+  margin-right: 10px;
+}
+
+/* Stylizacja formularza wyszukiwania */
+.search-form .form-group {
+  margin-bottom: 10px;
+}
+
+.search-form .form-control {
+  flex: 1;
+  margin-right: 10px;
 }
 
 .search-car {
-    background-color: #b6dee7; 
-    color: #28292f;
-    border: none;
-    padding: 5px 150px;
-    font-size: 20px;
-    font-weight: bold;
-    border-radius: 50px; /* Zaokrąglamy krawędzie */
-    transition: all 0.3s ease;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Dodajemy cień */
-    margin-top: auto; /* Umieść przycisk na tej samej wysokości co komórki formularza */
+  background-color: #b6dee7; 
+  color: #28292f;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
-
 
 .search-car:hover {
-    background-color: #387b9f; 
-    color: #fff;
+  background-color: #387b9f; 
+  color: #fff;
 }
 
+/* Stylizacja dla pól kalendarza i list rozwijanych */
+.custom-input, .custom-select {
+  background-color: #f0f9fb;
+  border: 2px solid #b6dee7;
+  color: #387b9f;
+  border-radius: 4px;
+  transition: background-color 0.3s, border-color 0.3s;
+}
 
+.custom-input:focus, .custom-select:focus {
+  border-color: #387b9f;
+  box-shadow: 0 0 5px rgba(56, 123, 159, 0.5);
+}
+
+.custom-select option {
+  background-color: #fff;
+  color: #387b9f;
+}
+
+/* Stylizacja nagłówków formularza */
+.search-form .form-label {
+  color: #387b9f;
+  font-weight: bold;
+}
+
+/* Dodanie cienkiej ramki wokół formularza */
+.search-form {
+  border: 1px solid #b6dee7;
+  border-radius: 8px;
+  padding: 15px;
+}
+
+/* Responsywność dla małych ekranów */
+@media (max-width: 576px) {
+  .search-form .form-group {
+      width: 100%;
+  }
+
+  .search-car {
+      width: 100%;
+      margin-top: 10px;
+  }
+}

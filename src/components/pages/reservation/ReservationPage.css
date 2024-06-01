@@ -100,8 +100,9 @@
   margin-bottom: 1.5rem; /* Standardowy margines dla sekcji Skrzynia biegów */
 }
 
+/* Stylizacjia check-boxes */
 .form-check-input {
-  background-color: #fff;
+  background-color: #fff; 
   border: 1px solid #b6dee7;
   border-radius: 4px; /* Zaokrąglone kwadraty */
   margin-left: 0; /* Wyrównanie do lewej */
@@ -225,7 +226,7 @@
 
 /* Ustawienie kolorów dla opcji w listach rozwijanych */
 .custom-select option {
-  background-color: #f0f9fb;
+  background-color: #fff;
   color: #387b9f;
 }
 

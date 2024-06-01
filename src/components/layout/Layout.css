@@ -32,8 +32,8 @@
     background-color: #b6dee7;
     color: #28292f;
     border: none;
-    margin-left: 1px;
-    margin-right: 5px;
+    margin-left: -10px;
+    margin-right: 20px;
 }
 
 .login-btn:hover {
