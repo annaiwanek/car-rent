@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Container, Form, Button, Row, Col } from 'react-bootstrap';
 import './ContactPage.css';
 
+// Zarządzanie formularzem
 function ContactPage() {
   const [formData, setFormData] = useState({
     name: '',
@@ -9,6 +10,7 @@ function ContactPage() {
     message: ''
   });
 
+  // Aktualizacja formularza na podstawie wprowadzonych danych
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prevState) => ({
@@ -17,6 +19,7 @@ function ContactPage() {
     }));
   };
 
+  // Zapobieganie domyślnemu zachowaniu formularza (przeładowanie strony)
   const handleSubmit = (e) => {
     e.preventDefault();
     // Dodanie logikę wysyłania formularza

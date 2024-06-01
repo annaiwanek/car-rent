@@ -4,7 +4,7 @@
     object-fit: cover; /* Zachowanie proporcji obrazów */
   }
   
-  /* Media queries dla responsywności */
+  /* Reguła Media queries dla responsywności */
   @media (max-width: 768px) {
     .carousel-image {
       height: 400px; /* Zmniejszenie wysokości dla średnich ekranów */

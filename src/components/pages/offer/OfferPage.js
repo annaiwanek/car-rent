@@ -1,6 +1,6 @@
 import React from 'react';
 import { Container, Row, Col, Card } from 'react-bootstrap';
-import './OfferPage.css'; // Dodanie stylów specyficznych dla tej podstrony
+import './OfferPage.css'; 
 
 const offers = [
   {

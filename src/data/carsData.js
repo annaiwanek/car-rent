@@ -5,12 +5,6 @@ const carsData = [
     imgSrc: "/image/citroenc3.webp",
     price: "84 PLN",
     features: ["Bezpłatne odwołanie rezerwacji", "Bez limitu km"],
-    specs: {
-      passengers: 5,
-      transmission: "Manual",
-      fuel: "5.5 l/100 km",
-      trunk: 305,
-    },
     link: "#",
     category: "Personal" // Dodaj kategorię
   },
@@ -20,12 +14,6 @@ const carsData = [
     imgSrc: "/image/hyundaii30.webp",
     price: "104 PLN",
     features: ["Bezpłatne odwołanie rezerwacji", "Bez limitu km"],
-    specs: {
-      passengers: 5,
-      transmission: "Automatic",
-      fuel: "5.2 l/100 km",
-      trunk: 395,
-    },
     link: "#",
     category: "Personal" // Dodaj kategorię
   },
@@ -35,12 +23,6 @@ const carsData = [
     imgSrc: "/image/skodaOctavia.webp",
     price: "114 PLN",
     features: ["Bezpłatne odwołanie rezerwacji", "Bez limitu km"],
-    specs: {
-      passengers: 5,
-      transmission: "Automatic",
-      fuel: "6.1 l/100 km",
-      trunk: 610,
-    },
     link: "#",
     category: "Personal" // Dodaj kategorię
   },
@@ -51,12 +33,6 @@ const carsData = [
     imgSrc: "/image/mercedesGLC.webp",
     price: "130 PLN",
     features: ["Bezpłatne odwołanie rezerwacji", "Bez limitu km"],
-    specs: {
-      passengers: 5,
-      transmission: "Automatic",
-      fuel: "8.1 l/100 km",
-      trunk: 305,
-    },
     link: "#",
     category: "Personal" // Dodaj kategorię
   },
@@ -67,12 +43,6 @@ const carsData = [
     imgSrc: "/image/BMWX4.webp",
     price: "130 PLN",
     features: ["Bezpłatne odwołanie rezerwacji", "Bez limitu km"],
-    specs: {
-      passengers: 5,
-      transmission: "Automatic",
-      fuel: "7.5 l/100 km",
-      trunk: 305,
-    },
     link: "#",
     category: "Personal" // Dodaj kategorię
   },
@@ -83,12 +53,6 @@ const carsData = [
     imgSrc: "/image/landRover.webp",
     price: "150 PLN",
     features: ["Bezpłatne odwołanie rezerwacji", "Bez limitu km"],
-    specs: {
-      passengers: 5,
-      transmission: "Automatic",
-      fuel: "11.3 l/100 km",
-      trunk: 305,
-    },
     link: "#",
     category: "Personal" // Dodaj kategorię
   },
@@ -99,12 +63,6 @@ const carsData = [
     imgSrc: "/image/mercedesGLC.webp",
     price: "130 PLN",
     features: ["Bezpłatne odwołanie rezerwacji", "Bez limitu km"],
-    specs: {
-      passengers: 5,
-      transmission: "Automatic",
-      fuel: "8.1 l/100 km",
-      trunk: 305,
-    },
     link: "#",
     category: "SUV" // Dodaj kategorię
   },
