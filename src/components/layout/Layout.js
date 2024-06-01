@@ -47,7 +47,7 @@ function Layout() {
 
             <Container fluid>
                 <Row className="justify-content-center my-4">
-                    <Button variant="info" size="lg" className="b-2 top-button">
+                    <Button as={Link} to="/reservation" variant="info" size="lg" className="b-2 top-button">
                         ROZPOCZNIJ SWOJĄ REZERWACJĘ
                     </Button>
                 </Row>
