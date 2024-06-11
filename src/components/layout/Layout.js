@@ -1,3 +1,4 @@
+// src/components/layout/Layout.js
 import React from 'react';
 import { Container, Nav, Navbar, Button, Form, NavDropdown, Col } from 'react-bootstrap';
 import { Outlet, Link } from 'react-router-dom';
@@ -40,7 +41,8 @@ function Layout() {
                             />
                             <Button variant="outline-success" className="search-btn">Szukaj</Button>
                         </Form>
-                        <Button as={Link} to="/logowanie" className="login-btn">Zaloguj</Button>
+                        <Button as={Link} to="/login" className="login-btn">Zaloguj</Button> {/* Zmieniony link */}
+                        <Button as={Link} to="/register" className="register-btn">Zarejestruj</Button> {/* Dodany link */}
                     </Navbar.Collapse>
                 </Container>
             </Navbar>
