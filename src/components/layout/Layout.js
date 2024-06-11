@@ -1,12 +1,12 @@
 import React from 'react';
-import { Container, Nav, Navbar, Button, Form, NavDropdown, Col } from 'react-bootstrap';
+import { Container, Nav, Navbar, Button, Form, NavDropdown, Col, Tooltip, OverlayTrigger } from 'react-bootstrap';
 import { Outlet, Link, useNavigate } from 'react-router-dom';
 import Image from 'react-bootstrap/Image';
 import Row from 'react-bootstrap/Row';
 import Footer from './Footer'; 
 import './Layout.css';
 import { FaUser, FaSignOutAlt } from 'react-icons/fa';
-import { useAuth } from '../firebase/AuthContext'; // Poprawiony import
+import { useAuth } from '../firebase/AuthContext';
 
 function Layout() {
     const { currentUser, logout } = useAuth();
@@ -20,6 +20,12 @@ function Layout() {
             console.error("Error logging out: ", error);
         }
     };
+
+    const renderTooltip = (props) => (
+        <Tooltip id="button-tooltip" {...props}>
+            Zaloguj
+        </Tooltip>
+    );
 
     return (
         <div className="app">
@@ -54,15 +60,21 @@ function Layout() {
                             />
                             <Button variant="outline-success" className="search-btn">Szukaj</Button>
                         </Form>
-                        {!currentUser ? (
-                            <Button as={Link} to="/login" className="login-btn">
-                                <FaUser /> Zaloguj
-                            </Button>
-                        ) : (
-                            <Button onClick={handleLogout} className="logout-btn">
-                                <FaSignOutAlt /> Wyloguj
-                            </Button>
-                        )}
+                        <OverlayTrigger
+                            placement="bottom"
+                            delay={{ show: 250, hide: 400 }}
+                            overlay={renderTooltip}
+                        >
+                            {!currentUser ? (
+                                <Button as={Link} to="/login" className="login-icon">
+                                    <FaUser />
+                                </Button>
+                            ) : (
+                                <Button onClick={handleLogout} className="logout-icon">
+                                    <FaSignOutAlt />
+                                </Button>
+                            )}
+                        </OverlayTrigger>
                     </Navbar.Collapse>
                 </Container>
             </Navbar>

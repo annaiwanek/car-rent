@@ -1,44 +1,44 @@
 /* Stylizacja przycisku "Rozpocznij swoją rezerwację" */
 .top-button {
-    background-color: #b6dee7;
-    color: #28292f;
+    background-color: #b6dee7; /* Jasnoniebieski */
+    color: #28292f; /* Ciemny szary */
     border: none;
-    padding: 10px 60px; /* Ustaw rozmiar przycisku */
-    font-size: 20px; /* Ustaw rozmiar czcionki */
+    padding: 10px 60px; /* Rozmiar przycisku */
+    font-size: 20px; /* Rozmiar czcionki */
     font-weight: bold;
     border-radius: 10px;
     transition: all 0.3s ease;
 }
 
 .top-button:hover {
-    background-color: #387b9f;
-    color: #fff;
+    background-color: #387b9f; /* Ciemniejszy niebieski */
+    color: #fff; /* Biały */
 }
 
 /* Stylizacja przycisku wyszukiwania */
 .search-btn {
-    background-color: #b6dee7;
-    color: #28292f;
+    background-color: #b6dee7; /* Jasnoniebieski */
+    color: #28292f; /* Ciemny szary */
     border: none;
 }
 
 .search-btn:hover {
-    background-color: #387b9f;
-    color: #fff;
+    background-color: #387b9f; /* Ciemniejszy niebieski */
+    color: #fff; /* Biały */
 }
 
 /* Stylizacja przycisku logowania */
 .login-btn {
-    background-color: #b6dee7;
-    color: #28292f;
+    background-color: #b6dee7; /* Jasnoniebieski */
+    color: #28292f; /* Ciemny szary */
     border: none;
     margin-left: -10px;
     margin-right: 20px;
 }
 
 .login-btn:hover {
-    background-color: #387b9f;
-    color: #fff;
+    background-color: #387b9f; /* Ciemniejszy niebieski */
+    color: #fff; /* Biały */
 }
 
 /* Stylizacja logo */
@@ -60,18 +60,86 @@
     display: flex;
     align-items: center;
     justify-content: center;
-  }
-  
-  .navbar-nav .nav-item .nav-link svg {
+}
+
+.navbar-nav .nav-item .nav-link svg {
     margin-left: 8px;
-  }
-  
-/* src/components/layout/Layout.css */
-.logout-btn {
+}
+
+/* Stylizacja przycisku logowania i wylogowania */
+.login-btn, .logout-btn {
+    border: none;
+    background: none;
+    padding: 0;
+    margin: 0 10px;
+    cursor: pointer;
+}
+
+.login-btn:hover, .logout-btn:hover {
+    text-decoration: none;
+}
+
+/* Stylizacja ikony logowania */
+.login-icon {
     background: none;
     border: none;
-    color: inherit;
-    font: inherit;
+    color: #28292f;
     cursor: pointer;
-    padding: 0;
+}
+
+.login-icon:hover {
+    color: #28292f; /* Brak zmiany koloru przy najechaniu */
+}
+
+/* Stylizacja ikony wylogowania */
+.logout-icon {
+    background: none;
+    border: none;
+    color: #28292f;
+    cursor: pointer;
+}
+
+.logout-icon:hover {
+    color: #387b9f; /* Zmiana koloru przy najechaniu */
+}
+
+/* Stylizacja dymka */
+.tooltip-inner {
+    background-color: #d1ecf9; /* Tło dymka */
+    color: #28292f; /* Kolor tekstu w dymku */
+    border-radius: 4px;
+    padding: 5px 10px;
+    font-size: 14px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.tooltip-arrow {
+    border-bottom-color: #d1ecf9 !important;
+}
+
+/* Stylizacja przycisku rejestracji/logowania w kontenerze */
+.login-register-container button {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #90c2e7;
+    border-radius: 4px;
+    background-color: #d1ecf9;
+    color: #000;
+    font-size: 16px;
+}
+
+.login-register-container button:hover {
+    background-color: #90c2e7;
+    color: #000;
+}
+
+.toggle-button {
+    margin-top: 10px;
+    color: #90c2e7;
+    cursor: pointer;
+}
+
+.toggle-button:hover {
+    text-decoration: underline;
 }

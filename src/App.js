@@ -10,7 +10,7 @@ import ContactPage from './components/pages/contact/ContactPage';
 import ReservationPage from './components/pages/reservation/ReservationPage';
 import FAQPage from './components/pages/faq/FAQPage';
 import LoginRegister from './components/firebase/LoginRegister';
-import { AuthProvider } from './components/firebase/AuthContext'; // Import AuthProvider
+import { AuthProvider } from './components/firebase/AuthContext';
 
 function App() {
   return (
