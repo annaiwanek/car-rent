@@ -1,14 +1,26 @@
-// src/components/layout/Layout.js
 import React from 'react';
 import { Container, Nav, Navbar, Button, Form, NavDropdown, Col } from 'react-bootstrap';
-import { Outlet, Link } from 'react-router-dom';
+import { Outlet, Link, useNavigate } from 'react-router-dom';
 import Image from 'react-bootstrap/Image';
 import Row from 'react-bootstrap/Row';
-import Footer from './Footer';
+import Footer from './Footer'; 
 import './Layout.css';
-import { FaUser } from 'react-icons/fa'; // Importowanie ikony logowania
+import { FaUser, FaSignOutAlt } from 'react-icons/fa';
+import { useAuth } from '../firebase/AuthContext'; // Poprawiony import
 
 function Layout() {
+    const { currentUser, logout } = useAuth();
+    const navigate = useNavigate();
+
+    const handleLogout = async () => {
+        try {
+            await logout();
+            navigate('/login');
+        } catch (error) {
+            console.error("Error logging out: ", error);
+        }
+    };
+
     return (
         <div className="app">
             <Navbar expand="lg" className="bg-body-tertiary">
@@ -27,7 +39,7 @@ function Layout() {
                             <Nav.Link as={Link} to="/reservation" className="d-block">Rezerwacja</Nav.Link>
                             <Nav.Link as={Link} to="/fleet" className="d-block">Flota</Nav.Link>
                             <Nav.Link as={Link} to="/faq">FAQ</Nav.Link>
-                            <Nav.Link as={Link} to="/contact" className="d-block">Kontakt</Nav.Link>
+                            <Nav.Link as={Link} to="/contact" className="d-block">Kontakt</Nav.Link> 
                             <NavDropdown title="Oddziały" id="navbarScrollingDropdown">
                                 <NavDropdown.Item as={Link} to="/warszawa" className="d-block">Warszawa</NavDropdown.Item>
                                 <NavDropdown.Item as={Link} to="/krakow" className="d-block">Kraków</NavDropdown.Item>
@@ -42,11 +54,15 @@ function Layout() {
                             />
                             <Button variant="outline-success" className="search-btn">Szukaj</Button>
                         </Form>
-                        <Nav>
-                            <Nav.Link as={Link} to="/login" className="d-block">
-                                <FaUser size={24} /> {/* Ikona logowania */}
-                            </Nav.Link>
-                        </Nav>
+                        {!currentUser ? (
+                            <Button as={Link} to="/login" className="login-btn">
+                                <FaUser /> Zaloguj
+                            </Button>
+                        ) : (
+                            <Button onClick={handleLogout} className="logout-btn">
+                                <FaSignOutAlt /> Wyloguj
+                            </Button>
+                        )}
                     </Navbar.Collapse>
                 </Container>
             </Navbar>
@@ -65,7 +81,7 @@ function Layout() {
                 </Row>
             </Container>
 
-            <Footer />
+            <Footer /> 
         </div>
     );
 }

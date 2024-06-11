@@ -10,25 +10,28 @@ import ContactPage from './components/pages/contact/ContactPage';
 import ReservationPage from './components/pages/reservation/ReservationPage';
 import FAQPage from './components/pages/faq/FAQPage';
 import LoginRegister from './components/firebase/LoginRegister';
+import { AuthProvider } from './components/firebase/AuthContext'; // Import AuthProvider
 
 function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Layout />} >
-          <Route index element={<Home />} />
-          <Route path="fleet" element={<Fleet />} />
-          <Route path="carousel" element={<CarouselHome />} />
-          <Route path="offer" element={<Offer />} />
-          <Route path="promotions" element={<PromotionsPage />} />
-          <Route path="reservation" element={<ReservationPage />} />
-          <Route path="faq" element={<FAQPage />} />
-          <Route path="contact" element={<ContactPage />} />
-          <Route path="login" element={<LoginRegister />} />
-          <Route path="register" element={<LoginRegister />} />
-        </Route>
-      </Routes>
-    </BrowserRouter>
+    <AuthProvider>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Layout />} >
+            <Route index element={<Home />} />
+            <Route path="fleet" element={<Fleet />} />
+            <Route path="carousel" element={<CarouselHome />} />
+            <Route path="offer" element={<Offer />} />
+            <Route path="promotions" element={<PromotionsPage />} />
+            <Route path="reservation" element={<ReservationPage />} />
+            <Route path="faq" element={<FAQPage />} />
+            <Route path="contact" element={<ContactPage />} />
+            <Route path="login" element={<LoginRegister />} />
+            <Route path="register" element={<LoginRegister />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    </AuthProvider>
   );
 }
 

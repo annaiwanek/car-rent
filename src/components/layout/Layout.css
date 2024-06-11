@@ -66,3 +66,12 @@
     margin-left: 8px;
   }
   
+/* src/components/layout/Layout.css */
+.logout-btn {
+    background: none;
+    border: none;
+    color: inherit;
+    font: inherit;
+    cursor: pointer;
+    padding: 0;
+}
