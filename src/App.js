@@ -3,14 +3,13 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Layout from './components/layout/Layout';
 import Fleet from './components/pages/fleet/FleetPage';
 import Home from './components/pages/home/Home';
-import CarouselHome from './components/carousel/CarouselHome'; 
+import CarouselHome from './components/carousel/CarouselHome';
 import Offer from './components/pages/offer/OfferPage';
-import PromotionsPage from './components/pages/promotions/PromotionsPage'; 
+import PromotionsPage from './components/pages/promotions/PromotionsPage';
 import ContactPage from './components/pages/contact/ContactPage';
-import ReservationPage from './components/pages/reservation/ReservationPage'; 
+import ReservationPage from './components/pages/reservation/ReservationPage';
 import FAQPage from './components/pages/faq/FAQPage';
-import Login from './firebase/Login'; 
-import Register from './firebase/Register'; 
+import LoginRegister from './components/firebase/LoginRegister';
 
 function App() {
   return (
@@ -25,8 +24,8 @@ function App() {
           <Route path="reservation" element={<ReservationPage />} />
           <Route path="faq" element={<FAQPage />} />
           <Route path="contact" element={<ContactPage />} />
-          <Route path="login" element={<Login />} /> 
-          <Route path="register" element={<Register />} /> 
+          <Route path="login" element={<LoginRegister />} />
+          <Route path="register" element={<LoginRegister />} />
         </Route>
       </Routes>
     </BrowserRouter>
