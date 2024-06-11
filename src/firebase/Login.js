@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
+import { auth } from './firebaseConfig';
+import { signInWithEmailAndPassword } from 'firebase/auth';
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -7,7 +8,6 @@ const Login = () => {
 
   const handleLogin = async (e) => {
     e.preventDefault();
-    const auth = getAuth();
     try {
       await signInWithEmailAndPassword(auth, email, password);
       alert('Zalogowano pomyślnie!');

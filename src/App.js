@@ -1,4 +1,3 @@
-// src/App.js
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Layout from './components/layout/Layout';
@@ -10,8 +9,8 @@ import PromotionsPage from './components/pages/promotions/PromotionsPage';
 import ContactPage from './components/pages/contact/ContactPage';
 import ReservationPage from './components/pages/reservation/ReservationPage'; 
 import FAQPage from './components/pages/faq/FAQPage';
-import Login from './firebase/Login'; // Importuj komponent logowania
-import Register from './firebase/Register'; // Importuj komponent rejestracji
+import Login from './firebase/Login'; 
+import Register from './firebase/Register'; 
 
 function App() {
   return (
@@ -26,8 +25,8 @@ function App() {
           <Route path="reservation" element={<ReservationPage />} />
           <Route path="faq" element={<FAQPage />} />
           <Route path="contact" element={<ContactPage />} />
-          <Route path="login" element={<Login />} /> {/* Popraw trasę logowania */}
-          <Route path="register" element={<Register />} /> {/* Dodaj trasę rejestracji */}
+          <Route path="login" element={<Login />} /> 
+          <Route path="register" element={<Register />} /> 
         </Route>
       </Routes>
     </BrowserRouter>
