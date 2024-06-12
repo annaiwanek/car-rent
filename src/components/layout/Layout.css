@@ -1,19 +1,29 @@
 /* Stylizacja przycisku "Rozpocznij swoją rezerwację" */
-.top-button {
-    background-color: #b6dee7; /* Jasnoniebieski */
-    color: #28292f; /* Ciemny szary */
+.app .top-button {
+    background-color: #b6dee7;
+    color: #28292f;
     border: none;
-    padding: 10px 60px; /* Rozmiar przycisku */
-    font-size: 20px; /* Rozmiar czcionki */
+    padding: 10px 60px;
+    font-size: 20px;
     font-weight: bold;
     border-radius: 10px;
-    transition: all 0.3s ease;
+    transition: background-color 0.3s ease; /* Zmiana tylko koloru tła */
+    transform: translate(0); /* Ustawienie początkowej pozycji */
 }
 
-.top-button:hover {
-    background-color: #387b9f; /* Ciemniejszy niebieski */
-    color: #fff; /* Biały */
+.app .top-button:hover {
+    background-color: #387b9f;
+    color: #fff;
 }
+
+.app .top-button:active {
+    background-color: #387b9f;
+    color: #fff;
+    outline: none;
+    box-shadow: none;
+    transform: translateY(2px); /* Lekkie przesunięcie w dół przy kliknięciu */
+}
+
 
 /* Stylizacja przycisku logowania */
 .login-btn {
@@ -186,6 +196,13 @@
 .search-btn:hover {
     background-color: #387b9f; /* Ciemniejszy niebieski */
     color: #fff; /* Biały */
+}
+
+.search-car:focus, .search-car:active {
+    background-color: #387b9f !important; 
+    color: #ffffff !important; 
+    outline: none !important; 
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1) !important; 
 }
 
 /* Dodaj styl dla stanu aktywnego */
