@@ -15,30 +15,18 @@
     color: #fff; /* Biały */
 }
 
-/* Stylizacja przycisku wyszukiwania */
-.search-btn {
-    background-color: #b6dee7; /* Jasnoniebieski */
-    color: #28292f; /* Ciemny szary */
-    border: none;
-}
-
-.search-btn:hover {
-    background-color: #387b9f; /* Ciemniejszy niebieski */
-    color: #fff; /* Biały */
-}
-
 /* Stylizacja przycisku logowania */
 .login-btn {
-    background-color: #b6dee7; /* Jasnoniebieski */
-    color: #28292f; /* Ciemny szary */
+    background-color: #b6dee7;
+    color: #28292f;
     border: none;
     margin-left: -10px;
     margin-right: 20px;
 }
 
 .login-btn:hover {
-    background-color: #387b9f; /* Ciemniejszy niebieski */
-    color: #fff; /* Biały */
+    background-color: #387b9f;
+    color: #fff;
 }
 
 /* Stylizacja logo */
@@ -66,7 +54,9 @@
     margin-left: 8px;
 }
 
+
 /* Stylizacja przycisku logowania i wylogowania */
+
 .login-btn, .logout-btn {
     border: none;
     background: none;
@@ -80,15 +70,20 @@
 }
 
 /* Stylizacja ikony logowania */
+
 .login-icon {
     background: none;
     border: none;
     color: #28292f;
     cursor: pointer;
+    font-size: 22px; /* Dodaj tę linię, aby zwiększyć rozmiar ikony */
+    padding: 0;
+    margin-right: 20px; /* Dodano margines od prawej krawędzi */
 }
 
 .login-icon:hover {
     color: #28292f; /* Brak zmiany koloru przy najechaniu */
+    background: none; /* Brak podświetlenia */
 }
 
 /* Stylizacja ikony wylogowania */
@@ -97,15 +92,23 @@
     border: none;
     color: #28292f;
     cursor: pointer;
+    font-size: 22px; /* Dodaj tę linię, aby zwiększyć rozmiar ikony */
+    margin-right: 20px; /* Dodano margines od prawej krawędzi */
 }
 
 .logout-icon:hover {
-    color: #387b9f; /* Zmiana koloru przy najechaniu */
+    color: #28292f; /* Brak zmiany koloru przy najechaniu */
+    background: none; /* Brak podświetlenia */
+}
+.login-icon:active
+ {
+    outline: none;
+    color: #387b9f;
 }
 
 /* Stylizacja dymka */
 .tooltip-inner {
-    background-color: #d1ecf9; /* Tło dymka */
+    background-color: #b6dee7; /* Tło dymka */
     color: #28292f; /* Kolor tekstu w dymku */
     border-radius: 4px;
     padding: 5px 10px;
@@ -114,7 +117,7 @@
 }
 
 .tooltip-arrow {
-    border-bottom-color: #d1ecf9 !important;
+    border-bottom-color: #b6dee7 !important;
 }
 
 /* Stylizacja przycisku rejestracji/logowania w kontenerze */
@@ -143,3 +146,51 @@
 .toggle-button:hover {
     text-decoration: underline;
 }
+
+/* Stylizacja kontenera logowania/rejestracji */
+.login-register-container {
+    width: 100%;
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.login-register-container h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.login-register-container input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px;
+}
+
+
+
+/* Stylizacja przycisku wyszukiwania */
+.search-btn {
+    background-color: #b6dee7; /* Jasnoniebieski */
+    color: #28292f; /* Ciemny szary */
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px; /* Ustawienie odpowiedniego odstępu dla ikony */
+}
+
+.search-btn:hover {
+    background-color: #387b9f; /* Ciemniejszy niebieski */
+    color: #fff; /* Biały */
+}
+
+/* Dodaj styl dla stanu aktywnego */
+.search-btn:active {
+    background-color: #387b9f; /* Taki sam kolor jak dla hover */
+    color: #fff; /* Biały */
+}
+

@@ -1,27 +1,38 @@
+/* Główny kontener formularza */
 .login-register-container {
     width: 100%;
-    max-width: 400px;
-    margin: 50px auto;
+    max-width: 400px; 
+    margin: 50px auto; 
     padding: 20px;
-    border-radius: 8px;
-    background-color: #ffffff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
+    border-radius: 8px; 
+    background-color: #ffffff; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    text-align: center; 
 }
 
+/* Nagłówek formularza */
 .login-register-container h1 {
     font-size: 24px;
     margin-bottom: 20px;
 }
 
+/* Pola input (adres e-mail, hasło) */
 .login-register-container input {
     width: 100%;
     padding: 10px;
     margin: 10px 0;
-    border: 1px solid #ddd;
+    border: 1px solid #ddd; 
     border-radius: 4px;
 }
 
+/* Zapobieganie czarnemu podświetleniu pól input */
+.login-register-container input:focus {
+    outline: none;       
+    border-color: #90c2e7; 
+    box-shadow: 0 0 5px #90c2e7; 
+}
+
+/* Przycisk "Zaloguj się" */
 .login-register-container button {
     width: 100%;
     padding: 10px;
@@ -33,17 +44,20 @@
     font-size: 16px;
 }
 
+/* Efekt hover dla przycisku "Zaloguj się" */
 .login-register-container button:hover {
     background-color: #387b9f; /* Ciemniejszy niebieski */
     color: #fff; /* Biały */
 }
 
+/* Link "Nie masz konta? Zarejestruj się" */
 .toggle-button {
     margin-top: 10px;
     color: #90c2e7; /* Niebieski */
-    cursor: pointer;
+    cursor: pointer; /* Zmiana kursora na wskazujący */
 }
 
+/* Podkreślenie linku po najechaniu */
 .toggle-button:hover {
     text-decoration: underline;
 }

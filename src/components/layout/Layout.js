@@ -5,7 +5,7 @@ import Image from 'react-bootstrap/Image';
 import Row from 'react-bootstrap/Row';
 import Footer from './Footer'; 
 import './Layout.css';
-import { FaUser, FaSignOutAlt } from 'react-icons/fa';
+import { FaUser, FaSignOutAlt, FaSearch } from 'react-icons/fa';
 import { useAuth } from '../firebase/AuthContext';
 
 function Layout() {
@@ -58,7 +58,9 @@ function Layout() {
                                 className="me-2"
                                 aria-label="Szukaj"
                             />
-                            <Button variant="outline-success" className="search-btn">Szukaj</Button>
+                            <Button variant="outline-success" className="search-btn">
+                                <FaSearch />
+                            </Button>
                         </Form>
                         <OverlayTrigger
                             placement="bottom"
