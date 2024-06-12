@@ -3,7 +3,7 @@ import { Container, Nav, Navbar, Button, Form, NavDropdown, Col, Tooltip, Overla
 import { Outlet, Link, useNavigate } from 'react-router-dom';
 import Image from 'react-bootstrap/Image';
 import Row from 'react-bootstrap/Row';
-import Footer from './Footer'; 
+import Footer from './Footer';
 import './Layout.css';
 import { FaUser, FaSignOutAlt, FaSearch } from 'react-icons/fa';
 import { useAuth } from '../firebase/AuthContext';
@@ -23,7 +23,7 @@ function Layout() {
 
     const renderTooltip = (props) => (
         <Tooltip id="button-tooltip" {...props}>
-            Zaloguj
+            {currentUser ? 'Wyloguj' : 'Zaloguj'}
         </Tooltip>
     );
 
@@ -45,7 +45,7 @@ function Layout() {
                             <Nav.Link as={Link} to="/reservation" className="d-block">Rezerwacja</Nav.Link>
                             <Nav.Link as={Link} to="/fleet" className="d-block">Flota</Nav.Link>
                             <Nav.Link as={Link} to="/faq">FAQ</Nav.Link>
-                            <Nav.Link as={Link} to="/contact" className="d-block">Kontakt</Nav.Link> 
+                            <Nav.Link as={Link} to="/contact" className="d-block">Kontakt</Nav.Link>
                             <NavDropdown title="Oddziały" id="navbarScrollingDropdown">
                                 <NavDropdown.Item as={Link} to="/warszawa" className="d-block">Warszawa</NavDropdown.Item>
                                 <NavDropdown.Item as={Link} to="/krakow" className="d-block">Kraków</NavDropdown.Item>
@@ -62,21 +62,19 @@ function Layout() {
                                 <FaSearch />
                             </Button>
                         </Form>
-                        <OverlayTrigger
-                            placement="bottom"
-                            delay={{ show: 250, hide: 400 }}
-                            overlay={renderTooltip}
-                        >
+
+                        <OverlayTrigger placement="bottom" delay={{ show: 250, hide: 400 }} overlay={renderTooltip}>
                             {!currentUser ? (
-                                <Button as={Link} to="/login" className="login-icon">
+                                <Link to="/login" className="login-icon">
                                     <FaUser />
-                                </Button>
+                                </Link>
                             ) : (
                                 <Button onClick={handleLogout} className="logout-icon">
                                     <FaSignOutAlt />
                                 </Button>
                             )}
                         </OverlayTrigger>
+
                     </Navbar.Collapse>
                 </Container>
             </Navbar>
@@ -95,7 +93,7 @@ function Layout() {
                 </Row>
             </Container>
 
-            <Footer /> 
+            <Footer />
         </div>
     );
 }
