@@ -1,38 +1,67 @@
-import React, { createContext, useContext, useState, useEffect } from 'react';
-import { auth } from '../../firebaseConfig';
+import React, { createContext, useState, useEffect, useContext } from 'react';
+import { auth } from '../../firebaseConfig'; 
 import { onAuthStateChanged, signOut, signInWithEmailAndPassword, createUserWithEmailAndPassword } from 'firebase/auth';
 
-const AuthContext = createContext();
+const AuthContext = createContext({
+  currentUser: null,
+  loading: true,
+  login: () => Promise.resolve(),
+  register: () => Promise.resolve(),
+  logout: () => Promise.resolve(),
+});
 
-export function AuthProvider({ children }) {
+export const AuthProvider = ({ children }) => {
   const [currentUser, setCurrentUser] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       setCurrentUser(user);
+      setLoading(false);
     });
+
+    // Cleanup function to unsubscribe when component unmounts
     return unsubscribe;
   }, []);
 
-  const login = (email, password) => {
-    return signInWithEmailAndPassword(auth, email, password);
+  const login = async (email, password) => {
+    try {
+      await signInWithEmailAndPassword(auth, email, password);
+    } catch (error) {
+      // Handle login error (e.g., display error message)
+      console.error("Login error:", error);
+      throw error; // Re-throw the error to be handled by the calling component
+    }
   };
 
-  const register = (email, password) => {
-    return createUserWithEmailAndPassword(auth, email, password);
+  const register = async (email, password) => {
+    try {
+      await createUserWithEmailAndPassword(auth, email, password);
+    } catch (error) {
+      // Handle registration error (e.g., display error message)
+      console.error("Registration error:", error);
+      throw error; // Re-throw the error to be handled by the calling component
+    }
   };
 
-  const logout = () => {
-    return signOut(auth);
+  const logout = async () => {
+    try {
+      await signOut(auth);
+    } catch (error) {
+      // Handle logout error (e.g., display error message)
+      console.error("Logout error:", error);
+    }
   };
+
+  const value = { currentUser, loading, login, register, logout };
 
   return (
-    <AuthContext.Provider value={{ currentUser, login, register, logout }}>
-      {children}
+    <AuthContext.Provider value={value}>
+      {!loading && children} 
     </AuthContext.Provider>
   );
-}
+};
 
-export function useAuth() {
+export const useAuth = () => {
   return useContext(AuthContext);
-}
+};

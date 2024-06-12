@@ -1,0 +1,25 @@
+.account-page {
+    margin-top: 20px;
+}
+
+.user-profile, .user-bookings, .user-reservations {
+    margin-top: 20px;
+}
+
+.edit-icon {
+    float: right;
+    cursor: pointer;
+    color: red;
+}
+
+.nav-pills .nav-link {
+    border-radius: 0;
+    background-color: #b6dee7;
+    color: #28292f;
+    margin-bottom: 10px;
+}
+
+.nav-pills .nav-link.active {
+    background-color: #387b9f;
+    color: #fff;
+}
