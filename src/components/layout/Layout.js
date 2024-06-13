@@ -37,10 +37,10 @@ function Layout() {
               <Nav.Link as={Link} to="/fleet">Flota</Nav.Link>
               <Nav.Link as={Link} to="/faq">FAQ</Nav.Link>
               <Nav.Link as={Link} to="/contact">Kontakt</Nav.Link>
-              <NavDropdown title="Oddziały" id="navbarScrollingDropdown">
+              {/* <NavDropdown title="Oddziały" id="navbarScrollingDropdown">
                 <NavDropdown.Item as={Link} to="/warszawa">Warszawa</NavDropdown.Item>
                 <NavDropdown.Item as={Link} to="/krakow">Kraków</NavDropdown.Item>
-              </NavDropdown>
+              </NavDropdown> */}
             </Nav>
 
             <Form className="d-flex mx-5">

@@ -36,10 +36,11 @@ export const AuthProvider = ({ children }) => {
 
   const register = async (email, password) => {
     try {
-      await createUserWithEmailAndPassword(auth, email, password);
+      console.log("Creating new user: ", email)
+      return await createUserWithEmailAndPassword(auth, email, password);
     } catch (error) {
       // Handle registration error (e.g., display error message)
-      console.error("Registration error:", error);
+      console.error("Registration error: ", error);
       throw error; // Re-throw the error to be handled by the calling component
     }
   };
