@@ -177,16 +177,13 @@
     background-color: #b6dee7; /* Jasnoniebieski */
     color: #28292f; /* Ciemny szary */
     border: none;
+    border-radius: 8px;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 10px; /* Ustawienie odpowiedniego odstępu dla ikony */
 }
 
-.search-btn:hover {
-    background-color: #387b9f; /* Ciemniejszy niebieski */
-    color: #fff; /* Biały */
-}
 
 .search-car:focus, .search-car:active {
     background-color: #387b9f !important; 
@@ -195,8 +192,8 @@
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1) !important; 
 }
 
-/* Dodaj styl dla stanu aktywnego */
-.search-btn:active {
-    background-color: #387b9f; /* Taki sam kolor jak dla hover */
-    color: #fff; /* Biały */
-}
+mark {
+    background:  #b6dee7;
+    color: black;
+  }
+  

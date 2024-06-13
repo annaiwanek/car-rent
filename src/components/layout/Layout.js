@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { Container, Nav, Navbar, Button, Form, Tooltip, OverlayTrigger, Row, Col } from 'react-bootstrap';
 import { Outlet, Link, useNavigate } from 'react-router-dom';
 import Image from 'react-bootstrap/Image';
@@ -7,10 +7,13 @@ import './Layout.css';
 import { FaSearch, FaRegUser  } from 'react-icons/fa'; // Import nowej ikony
 import { FiLogIn, FiLogOut } from 'react-icons/fi'; // Import nowej ikony
 import { useAuth } from '../firebase/AuthContext';
+import Mark from 'mark.js';
 
 function Layout() {
   const { currentUser, logout } = useAuth();
   const navigate = useNavigate();
+  const [searchQuery, setSearchQuery] = useState('');
+  const searchInputRef = useRef(null);
 
   const handleLogout = async () => {
     try {
@@ -20,6 +23,35 @@ function Layout() {
       console.error("Error logging out: ", error);
     }
   };
+  const handleSearch = (e) => {
+    setSearchQuery(e.target.value);
+  };
+
+  useEffect(() => {
+    const context = document.querySelector("body");
+    const instance = new Mark(context);
+    instance.unmark({
+      done: () => {
+        if (searchQuery) {
+          instance.mark(searchQuery);
+        }
+      }
+    });
+  }, [searchQuery]);
+
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.ctrlKey && e.key === 'f') {
+        e.preventDefault();
+        searchInputRef.current.focus();
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, []);
 
   return (
     <div className="app">
@@ -41,10 +73,18 @@ function Layout() {
             </Nav>
 
             <Form className="d-flex mx-5">
-              <Form.Control type="search" placeholder="Szukaj" className="me-2" aria-label="Szukaj" />
-              <Button variant="outline-success" className="search-btn">
+              <Form.Control
+                type="search"
+                placeholder="Szukaj"
+                className="me-2"
+                aria-label="Szukaj"
+                value={searchQuery}
+                onChange={handleSearch}
+                ref={searchInputRef}
+              />
+              <div variant="outline-success" className="search-btn">
                 <FaSearch />
-              </Button>
+              </div>
             </Form>
 
             <Nav> 
