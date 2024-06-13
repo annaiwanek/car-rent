@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useAuth } from '../firebase/AuthContext';
 import { collection, query, where, getDocs } from 'firebase/firestore';
-//import { db } from '../../firebaseConfig';
+import { db } from '../firebase/firebaseConfig'; // Upewnij się, że jest poprawnie zaimportowane
 
 function UserBookings() {
   const { currentUser } = useAuth();
