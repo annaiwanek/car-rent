@@ -1,10 +1,11 @@
 import React from 'react';
-import { Container, Nav, Navbar, Button, Form, NavDropdown, Col, Tooltip, OverlayTrigger, Row } from 'react-bootstrap';
+import { Container, Nav, Navbar, Button, Form, Tooltip, OverlayTrigger, Row, Col } from 'react-bootstrap';
 import { Outlet, Link, useNavigate } from 'react-router-dom';
 import Image from 'react-bootstrap/Image';
 import Footer from './Footer';
 import './Layout.css';
-import { FaUser, FaSignOutAlt, FaSearch } from 'react-icons/fa';
+import { FaSearch, FaRegUser  } from 'react-icons/fa'; // Import nowej ikony
+import { FiLogIn, FiLogOut } from 'react-icons/fi'; // Import nowej ikony
 import { useAuth } from '../firebase/AuthContext';
 
 function Layout() {
@@ -37,10 +38,6 @@ function Layout() {
               <Nav.Link as={Link} to="/fleet">Flota</Nav.Link>
               <Nav.Link as={Link} to="/faq">FAQ</Nav.Link>
               <Nav.Link as={Link} to="/contact">Kontakt</Nav.Link>
-              {/* <NavDropdown title="Oddziały" id="navbarScrollingDropdown">
-                <NavDropdown.Item as={Link} to="/warszawa">Warszawa</NavDropdown.Item>
-                <NavDropdown.Item as={Link} to="/krakow">Kraków</NavDropdown.Item>
-              </NavDropdown> */}
             </Nav>
 
             <Form className="d-flex mx-5">
@@ -55,11 +52,11 @@ function Layout() {
                 <OverlayTrigger
                   placement="bottom"
                   delay={{ show: 250, hide: 400 }}
-                  overlay={<Tooltip id="account-tooltip">Konto</Tooltip>}
+                  overlay={<Tooltip id="account-tooltip">Moje konto</Tooltip>}
                 >
-                  <Nav.Link as={Link} to="/account" className="account-link">
-                    Moje Konto
-                  </Nav.Link>
+                  <Button as={Link} to="/account" className="nav-icons">
+                   <FaRegUser/> {/* Użycie nowej ikony */}
+                  </Button>
                 </OverlayTrigger>
               )}
 
@@ -73,13 +70,16 @@ function Layout() {
                 }
               >
                 {!currentUser ? (
-                  <Button as={Link} to="/login" className="login-icon">
-                    <FaUser />
+                  <Button as={Link} to="/login" className="nav-icons">
+                    <FiLogIn /> {/* Użycie nowej ikony */}
                   </Button>
                 ) : (
-                  <Button onClick={handleLogout} className="logout-icon">
-                    <FaSignOutAlt />
+                  <section>
+                  <Button onClick={handleLogout} className="nav-icons">
+                    <FiLogOut /> {/* Użycie nowej ikony */}
                   </Button>
+                  </section>
+                  
                 )}
               </OverlayTrigger>
             </Nav>

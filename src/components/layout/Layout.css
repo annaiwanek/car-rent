@@ -79,42 +79,33 @@
     text-decoration: none;
 }
 
-/* Stylizacja ikony logowania */
-
-.login-icon {
-    background: none;
-    border: none;
-    color: #28292f;
-    cursor: pointer;
-    font-size: 22px; /* Dodaj tę linię, aby zwiększyć rozmiar ikony */
-    padding: 0;
-    margin-right: 20px; /* Dodano margines od prawej krawędzi */
-}
-
-.login-icon:hover {
-    color: #28292f; /* Brak zmiany koloru przy najechaniu */
-    background: none; /* Brak podświetlenia */
-}
 
 /* Stylizacja ikony wylogowania */
-.logout-icon {
+.nav-icons {
     background: none;
     border: none;
     color: #28292f;
     cursor: pointer;
-    font-size: 22px; /* Dodaj tę linię, aby zwiększyć rozmiar ikony */
-    margin-right: 20px; /* Dodano margines od prawej krawędzi */
+    font-size: 28px; /* Zwiększono rozmiar ikony */
+    margin-right: 10px; /* Dodano margines od prawej krawędzi */
 }
 
-.logout-icon:hover {
+.nav-icons:hover {
     color: #28292f; /* Brak zmiany koloru przy najechaniu */
     background: none; /* Brak podświetlenia */
 }
-.login-icon:active
- {
+
+.nav-icons:active {
     outline: none;
     color: #387b9f;
 }
+
+
+
+/* Zmiana koloru przy najechaniu */
+/* .account-link:hover svg {
+    color: #387b9f; 
+} */
 
 /* Stylizacja dymka */
 .tooltip-inner {
@@ -181,7 +172,6 @@
 }
 
 
-
 /* Stylizacja przycisku wyszukiwania */
 .search-btn {
     background-color: #b6dee7; /* Jasnoniebieski */
@@ -210,4 +200,3 @@
     background-color: #387b9f; /* Taki sam kolor jak dla hover */
     color: #fff; /* Biały */
 }
-
