@@ -3,7 +3,8 @@ import { Tabs, Tab } from 'react-bootstrap';
 import UserProfile from './UserProfile';
 import UserReservations from './UserReservations';
 import UserBookings from './UserBookings'; // Dodaj import komponentu UserBookings
-//import './UserAccount.css'; // Utwórz plik CSS dla stylizacji komponentu
+import './UserAccount.css';
+
 
 function UserAccount() {
   return (
@@ -12,7 +13,7 @@ function UserAccount() {
         <Tab eventKey="profile" title="Twój profil">
           <UserProfile />
         </Tab>
-        <Tab eventKey="bookings" title="Bieżące rezerwacje"> {/* Dodaj zakładkę dla bieżących rezerwacji */}
+        <Tab eventKey="bookings" title="Aktywne wypożyczenia"> {/* Dodaj zakładkę dla bieżących rezerwacji */}
           <UserBookings /> 
         </Tab>
         <Tab eventKey="reservations" title="Historia rezerwacji">
@@ -21,6 +22,6 @@ function UserAccount() {
       </Tabs>
     </div>
   );
-};
+}
 
 export default UserAccount;

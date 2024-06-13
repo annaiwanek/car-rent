@@ -1,18 +1,17 @@
 import React from 'react';
+import { useAuth } from '../firebase/AuthContext';
 
-const UserProfile = () => {
+function UserProfile() {
+  const { currentUser } = useAuth();
+
   return (
-    <div className="profile-container">
+    <div>
       <h2>Twój profil</h2>
-      <div className="profile-details">
-        <p>E-mail: user@example.com</p>
-        <p>Hasło: *********</p>
-        <p>Telefon kontaktowy: +48 555 666 777</p>
-        <p>Powiązane z Google: Tak</p>
-        <p>Powiązane z Facebook: Nie</p>
-      </div>
+      <p>Email: {currentUser?.email}</p>
+      <p>Nazwa użytkownika: {currentUser?.displayName}</p>
+      {/* ... inne informacje o użytkowniku */}
     </div>
   );
-};
+}
 
 export default UserProfile;
