@@ -32,12 +32,12 @@ module.exports = {
     extensions: ['.js', '.jsx'],
     fallback: {
       "process": require.resolve("process/browser"),
-      "zlib": require.resolve("browserify-zlib"),
-      "stream": require.resolve("stream-browserify"),
-      "util": require.resolve("util/"),
-      "buffer": require.resolve("buffer/"),
-      "assert": require.resolve("assert/"),
-      "crypto": require.resolve("crypto-browserify"),
+      // "zlib": require.resolve("browserify-zlib"),
+      // "stream": require.resolve("stream-browserify"),
+      // "util": require.resolve("util/"),
+      // "buffer": require.resolve("buffer/"),
+      // "assert": require.resolve("assert/"),
+      // "crypto": require.resolve("crypto-browserify"),
     }
   },
   plugins: [
