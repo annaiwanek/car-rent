@@ -35,6 +35,14 @@ function ReservationDetailsPage() {
             <p>Data i godzina zwrotu: <strong>18.06.2024 10:30</strong></p>
             <p>Miejsce zwrotu: <strong>Oddział Warszawa Łużycka 26E</strong></p>
           </Card>
+          <Card className="car-info">
+            <h5>Informacje o samochodzie:</h5>
+            <p><strong>Marka:</strong> {car.specs.brand}</p>
+            <p><strong>Model:</strong> {car.specs.model}</p>
+            <p><strong>Rok produkcji:</strong> {car.specs.year}</p>
+            <p><strong>Pojemność silnika:</strong> {car.specs.engineSize}</p>
+            <p><strong>Spalanie:</strong> {car.specs.consumption} l/100km</p>
+          </Card>
         </Col>
       </Row>
       <h5 className="section-subtitle">Wybierz usługi dodatkowe</h5>

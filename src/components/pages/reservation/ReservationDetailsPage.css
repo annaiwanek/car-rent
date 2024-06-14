@@ -11,21 +11,24 @@
     height: auto;
   }
   
-  .reservation-details-page .reservation-summary {
+  .reservation-details-page .reservation-summary,
+  .reservation-details-page .car-info {
     background-color: #f0f9fb;
     border-radius: 8px;
     padding: 20px;
     margin-bottom: 30px;
   }
   
-  .reservation-details-page .reservation-summary h5 {
+  .reservation-details-page .reservation-summary h5,
+  .reservation-details-page .car-info h5 {
     font-size: 1.25rem;
     font-weight: bold;
     color: #387b9f;
     margin-bottom: 15px;
   }
   
-  .reservation-details-page .reservation-summary p {
+  .reservation-details-page .reservation-summary p,
+  .reservation-details-page .car-info p {
     font-size: 1rem;
     color: #555;
     margin-bottom: 10px;
