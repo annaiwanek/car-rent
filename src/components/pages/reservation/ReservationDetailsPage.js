@@ -63,7 +63,7 @@ function ReservationDetailsPage() {
               checked={selectedOption === 'standard'}
               onChange={handleOptionChange}
             />
-            <p>&#10003; Podstawowe ubezpieczenie OC, AC i NW gwarantujące bezpieczne użytkowanie pojazdu.</p>
+            <p>✔ Podstawowe ubezpieczenie OC, AC i NW gwarantujące bezpieczne użytkowanie pojazdu.</p>
             <p className="service-price">Cena: W CENIE</p>
           </Col>
           <Col md={3} className={`service-option ${selectedOption === 'gold' ? 'selected' : ''}`}>
@@ -75,7 +75,7 @@ function ReservationDetailsPage() {
               checked={selectedOption === 'gold'}
               onChange={handleOptionChange}
             />
-            <p>&#10003; Opcja ubezpieczenie w wersji Gold gwarantuje zniesienie udziału własnego w szkodach AC do 0 zł.</p>
+            <p>✔ Opcja ubezpieczenie w wersji Gold gwarantuje zniesienie udziału własnego w szkodach AC do 0 zł.</p>
             <p className="service-price">Cena: +39 PLN</p>
           </Col>
           <Col md={3} className={`service-option ${selectedOption === 'gold-eu' ? 'selected' : ''}`}>
@@ -87,7 +87,7 @@ function ReservationDetailsPage() {
               checked={selectedOption === 'gold-eu'}
               onChange={handleOptionChange}
             />
-            <p>&#10003; Opcja ubezpieczenie w wersji Gold EU gwarantuje zniesienie udziału własnego w szkodach AC do 0 zł.</p>
+            <p>✔ Opcja ubezpieczenie w wersji Gold EU gwarantuje zniesienie udziału własnego w szkodach AC do 0 zł.</p>
             <p className="service-price">Cena: +89 PLN</p>
           </Col>
           <Col md={3} className={`service-option ${selectedOption === 'abroad' ? 'selected' : ''}`}>
@@ -99,7 +99,7 @@ function ReservationDetailsPage() {
               checked={selectedOption === 'abroad'}
               onChange={handleOptionChange}
             />
-            <p>&#10003; Opcja wyjazdu za granicę w strefie 1.</p>
+            <p>✔ Opcja wyjazdu za granicę w strefie 1.</p>
             <p className="service-price">Cena: +149 PLN</p>
           </Col>
         </Row>
@@ -114,10 +114,13 @@ function ReservationDetailsPage() {
         </Button>
         {showAdditionalOptions && (
           <Form className="additional-options-form">
-            <Form.Check
-              type="checkbox"
-              label="Końcowe mycie pojazdu za 39 PLN"
-            />
+            <div className="form-check-wrapper">
+              <Form.Check
+                type="checkbox"
+                label="Końcowe mycie pojazdu za 39 PLN"
+                className="form-check-item"
+              />
+            </div>
           </Form>
         )}
       </Card>

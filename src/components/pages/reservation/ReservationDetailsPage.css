@@ -46,7 +46,6 @@
     font-weight: bold;
     color: #387b9f;
     margin-bottom: 15px;
-    text-align: center;
   }
   
   .reservation-details-page .additional-services .service-option {
@@ -58,16 +57,11 @@
     padding: 15px;
     border: 1px solid #e1e1e1;
     border-radius: 4px;
-    text-align: center;
   }
   
   .reservation-details-page .additional-services .service-option p {
     font-size: 1rem;
     color: #555;
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
   }
   
   .reservation-details-page .additional-services .service-option .service-price {
@@ -86,6 +80,10 @@
   .reservation-details-page .additional-services .service-option.selected .service-price,
   .reservation-details-page .additional-services .service-option.selected strong {
     color: white;
+  }
+  
+  .reservation-details-page .additional-services .service-option strong {
+    font-weight: bold;
   }
   
   .toggle-additional-options {
@@ -141,5 +139,16 @@
     color: #387b9f;
     margin-top: 30px;
     margin-bottom: 15px;
+  }
+  
+  .form-check-wrapper {
+    display: flex;
+    align-items: center;
+    padding-left: 15px; /* Dostosowanie przesunięcia dla checkboxa */
+    margin-top: 10px; /* Zwiększenie odległości między akordeonem a opcjami */
+  }
+  
+  .form-check-item {
+    margin-left: 10px; /* Dostosowanie przesunięcia dla napisu */
   }
   
