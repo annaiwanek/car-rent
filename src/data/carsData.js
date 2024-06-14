@@ -6,7 +6,8 @@ const carsData = [
     price: "84 PLN",
     features: ["Bezpłatne odwołanie rezerwacji", "Bez limitu km"],
     link: "#",
-    category: "Personal" // Dodaj kategorię
+    categories: ["Personal"],
+    specs: { transmission: "manual" }
   },
   {
     title: "Hyundai i30",
@@ -15,7 +16,8 @@ const carsData = [
     price: "104 PLN",
     features: ["Bezpłatne odwołanie rezerwacji", "Bez limitu km"],
     link: "#",
-    category: "Personal" // Dodaj kategorię
+    categories: ["Personal"],
+    specs: { transmission: "manual" }
   },
   {
     title: "Skoda Octavia",
@@ -24,9 +26,9 @@ const carsData = [
     price: "114 PLN",
     features: ["Bezpłatne odwołanie rezerwacji", "Bez limitu km"],
     link: "#",
-    category: "Personal" // Dodaj kategorię
+    categories: ["Personal"],
+    specs: { transmission: "manual" }
   },
-
   {
     title: "Mercedes GLC",
     description: "Samochody nowe, maksymalnie roczne",
@@ -34,9 +36,9 @@ const carsData = [
     price: "130 PLN",
     features: ["Bezpłatne odwołanie rezerwacji", "Bez limitu km"],
     link: "#",
-    category: "Personal" // Dodaj kategorię
+    categories: ["SUV", "Personal"],
+    specs: { transmission: "automatic" }
   },
-
   {
     title: "BMW X4",
     description: "Samochody nowe, maksymalnie roczne",
@@ -44,9 +46,9 @@ const carsData = [
     price: "130 PLN",
     features: ["Bezpłatne odwołanie rezerwacji", "Bez limitu km"],
     link: "#",
-    category: "Personal" // Dodaj kategorię
+    categories: ["SUV", "Personal"],
+    specs: { transmission: "automatic" }
   },
-
   {
     title: "Land Rover Discovery",
     description: "Samochody nowe, maksymalnie roczne",
@@ -54,157 +56,76 @@ const carsData = [
     price: "150 PLN",
     features: ["Bezpłatne odwołanie rezerwacji", "Bez limitu km"],
     link: "#",
-    category: "Personal" // Dodaj kategorię
+    categories: ["SUV", "Personal"],
+    specs: { transmission: "automatic" }
   },
-
-  {
-    title: "Mercedes GLC",
-    description: "Samochody nowe, maksymalnie roczne",
-    imgSrc: "/image/mercedesGLC.webp",
-    price: "130 PLN",
-    features: ["Bezpłatne odwołanie rezerwacji", "Bez limitu km"],
-    link: "#",
-    category: "SUV" // Dodaj kategorię
-  },
-
-  {
-    title: "BMW X4",
-    description: "Samochody nowe, maksymalnie roczne",
-    imgSrc: "/image/BMWX4.webp",
-    price: "130 PLN",
-    features: ["Bezpłatne odwołanie rezerwacji", "Bez limitu km"],
-    specs: {
-      passengers: 5,
-      transmission: "Automatic",
-      fuel: "7.5 l/100 km",
-      trunk: 305,
-    },
-    link: "#",
-    category: "SUV" // Dodaj kategorię
-  },
-
-  {
-    title: "Land Rover Discovery",
-    description: "Samochody nowe, maksymalnie roczne",
-    imgSrc: "/image/landRover.webp",
-    price: "150 PLN",
-    features: ["Bezpłatne odwołanie rezerwacji", "Bez limitu km"],
-    specs: {
-      passengers: 5,
-      transmission: "Automatic",
-      fuel: "11.3 l/100 km",
-      trunk: 305,
-    },
-    link: "#",
-    category: "SUV" // Dodaj kategorię
-  },
-
 
   {
     title: "Ford Transit",
-    //description: "Idealny dla dużej rodziny",
     imgSrc: "/image/fordTransit.webp",
     price: "150 PLN",
     features: ["Bezpłatne odwołanie rezerwacji", "Bez limitu km"],
-    specs: {
-      passengers: 9,
-      transmission: "Manual",
-      fuel: "9.0 l/100 km",
-      trunk: 1000,
-    },
     link: "#",
-    category: "Van"  // Dodaj kategorię
-   
+    categories: ["Van", "Delivery"],
+    specs: { transmission: "manual" }
   },
-
+  {
+    title: "Toyota Proace City Long",
+    imgSrc: "/image/toyotaProace.webp",
+    price: "140 PLN",
+    features: ["Bezpłatne odwołanie rezerwacji", "Bez limitu km"],
+    link: "#",
+    categories: ["Van"],
+    specs: { transmission: "automatic" }
+  },
   {
     title: "Renault Trafic",
-    //description: "Idealny dla dużej rodziny",
     imgSrc: "/image/renault.webp",
     price: "150 PLN",
     features: ["Bezpłatne odwołanie rezerwacji", "Bez limitu km"],
-    specs: {
-      passengers: 9,
-      transmission: "Manual",
-      fuel: "7.2 l/100 km",
-      trunk: 1000,
-    },
     link: "#",
-    category: "Van" // Dodaj kategorię
-  }, 
-
+    categories: ["Van", "Delivery"],
+    specs: { transmission: "manual" }
+  },
   {
     title: "Mercedes Vito",
-    //description: "Idealny dla dużej rodziny",
     imgSrc: "/image/mercedesVito.webp",
     price: "170 PLN",
     features: ["Bezpłatne odwołanie rezerwacji", "Bez limitu km"],
-    specs: {
-      passengers: 9,
-      transmission: "Automatic",
-      fuel: "5.6 l/100 km",
-      trunk: 1000,
-    },
     link: "#",
-    category: "Van" // Dodaj kategorię
-  }, 
-
-
-
+    categories: ["Delivery"],
+    specs: { transmission: "automatic" }
+  },
   {
     title: "Mercedes Sprinter",
     description: "Idealny do przewozu towarów w mieście i na długie trasy",
     imgSrc: "/image/mercedesSprinter.webp",
     price: "150 PLN",
     features: ["Bezpłatne odwołanie rezerwacji", "Bez limitu km"],
-    specs: {
-      passengers: 9,
-      transmission: "Manual",
-      fuel: "8.5 l/100 km",
-      trunk: 1000,
-    },
     link: "#",
-    category: "Delivery"  // Dodaj kategorię
-   
+    categories: ["Delivery"],
+    specs: { transmission: "automatic" }
   },
-
   {
     title: "Fiat Ducato",
     description: "Idealny do przewozu towarów w mieście i na długie trasy",
     imgSrc: "/image/fiatDucato2.webp",
     price: "200 PLN",
     features: ["Bezpłatne odwołanie rezerwacji", "Bez limitu km"],
-    specs: {
-      passengers: 3,
-      transmission: "Manual",
-      fuel: "7.1 l/100 km",
-      trunk: 1000,
-    },
     link: "#",
-    category: "Delivery"  // Dodaj kategorię
-   
+    categories: ["Delivery"],
+    specs: { transmission: "manual" }
   },
-
   {
     title: "Fiat Ducato",
     description: "Idealny do przewozu towarów w mieście i na długie trasy",
     imgSrc: "/image/fiatDucato.webp",
     price: "200 PLN",
     features: ["Bezpłatne odwołanie rezerwacji", "Bez limitu km"],
-    specs: {
-      passengers: 3,
-      transmission: "Manual",
-      fuel: "9.3 l/100 km",
-      trunk: 1000,
-    },
     link: "#",
-    category: "Delivery"  // Dodaj kategorię
-   
-  },
-
- 
-
-  
+    categories: ["Delivery"],
+    specs: { transmission: "manual" }
+  }
 ];
 
 export default carsData;

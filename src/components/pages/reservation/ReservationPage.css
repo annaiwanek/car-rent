@@ -249,3 +249,10 @@
     font-size: 12px; /* Zmniejszenie rozmiaru czcionki tekstu */
   }
 }
+
+.no-offers {
+  font-size: 1.5rem;
+  color: #333;
+  text-align: center;
+  margin-top: 20px;
+}

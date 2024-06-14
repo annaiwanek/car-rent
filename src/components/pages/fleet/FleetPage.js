@@ -7,7 +7,7 @@ import '../../../data/carsData.css'; // Import wspólnych stylów dla samochodó
 function FleetPage() {
   const [key, setKey] = useState('Personal');
 
-  const filteredCars = carsData.filter((car) => car.category === key);
+  const filteredCars = carsData.filter((car) => car.categories.includes(key));
 
   return (
     <Container fluid className="fleet-page">

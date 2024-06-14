@@ -59,6 +59,9 @@
     align-items: center;
     justify-content: center;
 }
+.navbar-nav .nav-link {
+    font-size: 17.5px; /* Zwiększono rozmiar czcionki dla pozycji menu */
+}
 
 .navbar-nav .nav-item .nav-link svg {
     margin-left: 8px;

@@ -1,10 +1,63 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Container, Row, Col, Card, Form, Button } from 'react-bootstrap';
 import carsData from '../../../data/carsData'; // Import danych samochodów
 import './ReservationPage.css';
-import '../../../data/carsData.css'; // Import wspólnych stylów dla samochodów
 
 function ReservationPage() {
+  const [filters, setFilters] = useState({
+    type: [],
+    transmission: [],
+    price: '',
+  });
+
+  const handleFilterChange = (e) => {
+    const { name, value, checked, type } = e.target;
+
+    if (type === 'checkbox') {
+      setFilters((prevFilters) => {
+        if (value === "all" && checked) {
+          return {
+            ...prevFilters,
+            type: [],
+          };
+        }
+
+        if (checked) {
+          return {
+            ...prevFilters,
+            [name]: [...prevFilters[name], value],
+          };
+        } else {
+          return {
+            ...prevFilters,
+            [name]: prevFilters[name].filter((item) => item !== value),
+          };
+        }
+      });
+    } else if (type === 'radio') {
+      setFilters((prevFilters) => ({
+        ...prevFilters,
+        [name]: value,
+      }));
+    }
+  };
+
+  const filteredCars = carsData
+    .filter((car) => {
+      const filterByType = filters.type.length === 0 || filters.type.some((type) => car.categories.includes(type));
+      const filterByTransmission = filters.transmission.length === 0 || filters.transmission.includes(car.specs?.transmission?.toLowerCase());
+      return filterByType && filterByTransmission;
+    })
+    .sort((a, b) => {
+      if (filters.price === 'ascending') {
+        return parseFloat(a.price) - parseFloat(b.price);
+      } else if (filters.price === 'descending') {
+        return parseFloat(b.price) - parseFloat(a.price);
+      } else {
+        return 0;
+      }
+    });
+
   return (
     <Container fluid className="reservation-page">
       <Row>
@@ -49,42 +102,46 @@ function ReservationPage() {
             <h5 className="section-title">Filtry</h5>
             <Form.Group controlId="formType" className="mb-4">
               <Form.Label>Typ pojazdu</Form.Label>
-              <Form.Check type="checkbox" label="Pokaż wszystko" className="form-check" />
-              <Form.Check type="checkbox" label="Limuzyny" className="form-check" />
-              <Form.Check type="checkbox" label="Kombi" className="form-check" />
-              <Form.Check type="checkbox" label="SUV" className="form-check" />
-              <Form.Check type="checkbox" label="Minibusy" className="form-check" />
-              <Form.Check type="checkbox" label="Coupe / Sportowe" className="form-check" />
+              <Form.Check type="checkbox" label="Pokaż wszystko" value="all" name="type" onChange={handleFilterChange} className="form-check" />
+              <Form.Check type="checkbox" label="Osobowe" value="Personal" name="type" onChange={handleFilterChange} className="form-check" />
+              <Form.Check type="checkbox" label="Kombi" value="Combi" name="type" onChange={handleFilterChange} className="form-check" />
+              <Form.Check type="checkbox" label="SUV" value="SUV" name="type" onChange={handleFilterChange} className="form-check" />
+              <Form.Check type="checkbox" label="Minibusy" value="Van" name="type" onChange={handleFilterChange} className="form-check" />
+              <Form.Check type="checkbox" label="Coupe / Sportowe" value="Sport" name="type" onChange={handleFilterChange} className="form-check" />
             </Form.Group>
             <Form.Group controlId="formTransmission" className="mb-4">
               <Form.Label>Skrzynia biegów</Form.Label>
-              <Form.Check type="checkbox" label="Ręczna" className="form-check" />
-              <Form.Check type="checkbox" label="Automatyczna" className="form-check" />
+              <Form.Check type="checkbox" label="Ręczna" value="manual" name="transmission" onChange={handleFilterChange} className="form-check" />
+              <Form.Check type="checkbox" label="Automatyczna" value="automatic" name="transmission" onChange={handleFilterChange} className="form-check" />
             </Form.Group>
             <Form.Group controlId="formPrice" className="mb-4">
               <Form.Label>Cena</Form.Label>
-              <Form.Check type="checkbox" label="Rosnąco" className="form-check" />
-              <Form.Check type="checkbox" label="Malejąco" className="form-check" />
+              <Form.Check type="radio" label="Rosnąco" value="ascending" name="price" onChange={handleFilterChange} className="form-radio" />
+              <Form.Check type="radio" label="Malejąco" value="descending" name="price" onChange={handleFilterChange} className="form-radio" />
             </Form.Group>
           </Form>
         </Col>
         <Col md={9} sm={12} xs={12}>
-          {carsData.map((car, index) => (
-            <Card key={index} className="mb-4 car-card">
-              <Card.Img variant="top" src={car.imgSrc} alt={car.title} />
-              <Card.Body>
-                <Card.Title>{car.title}</Card.Title>
-                <Card.Text>{car.description}</Card.Text>
-                <ul className="car-features">
-                  {car.features.map((feature, i) => (
-                    <li key={i}>{feature}</li>
-                  ))}
-                </ul>
-                <p className="car-price">Cena: {car.price} za 1 dzień</p>
-                <Button variant="primary" href={car.link} className="promo-button">Zarezerwuj teraz</Button>
-              </Card.Body>
-            </Card>
-          ))}
+          {filteredCars.length > 0 ? (
+            filteredCars.map((car, index) => (
+              <Card key={index} className="mb-4 car-card">
+                <Card.Img variant="top" src={car.imgSrc} alt={car.title} />
+                <Card.Body>
+                  <Card.Title>{car.title}</Card.Title>
+                  <Card.Text>{car.description}</Card.Text>
+                  <ul className="car-features">
+                    {car.features.map((feature, i) => (
+                      <li key={i}>{feature}</li>
+                    ))}
+                  </ul>
+                  <p className="car-price">Cena: {car.price} za 1 dzień</p>
+                  <Button variant="primary" href={car.link} className="promo-button">Zarezerwuj teraz</Button>
+                </Card.Body>
+              </Card>
+            ))
+          ) : (
+            <p className="no-offers">Brak ofert spełniających kryteria</p>
+          )}
         </Col>
       </Row>
     </Container>
