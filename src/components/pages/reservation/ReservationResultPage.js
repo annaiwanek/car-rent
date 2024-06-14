@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Container, Row, Col, Card, Form, Button, Accordion, useAccordionToggle } from 'react-bootstrap';
+import { Container, Row, Col, Card, Form, Button, Accordion } from 'react-bootstrap';
 import carsData from '../../../data/carsData'; // Import danych samochodów
 import './ReservationResultPage.css';
 
@@ -8,35 +8,47 @@ function ReservationResultPage() {
     type: [],
     transmission: [],
     price: '',
+    returnLocation: false,
+    ageBelow21: false,
   });
-  const [showDateForm, setShowDateForm] = useState(false);
-  const [showFilters, setShowFilters] = useState(false);
 
   const handleFilterChange = (e) => {
     const { name, value, checked, type } = e.target;
 
     if (type === 'checkbox') {
-      setFilters((prevFilters) => {
-        if (value === "all" && checked) {
-          return {
-            ...prevFilters,
-            type: [],
-          };
-        }
+      if (name === 'returnLocation' || name === 'ageBelow21') {
+        setFilters((prevFilters) => ({
+          ...prevFilters,
+          [name]: checked,
+        }));
+      } else {
+        setFilters((prevFilters) => {
+          if (value === 'all' && checked) {
+            return {
+              ...prevFilters,
+              type: [],
+            };
+          }
 
-        if (checked) {
-          return {
-            ...prevFilters,
-            [name]: [...prevFilters[name], value],
-          };
-        } else {
-          return {
-            ...prevFilters,
-            [name]: prevFilters[name].filter((item) => item !== value),
-          };
-        }
-      });
+          if (checked) {
+            return {
+              ...prevFilters,
+              [name]: [...(prevFilters[name] || []), value],
+            };
+          } else {
+            return {
+              ...prevFilters,
+              [name]: (prevFilters[name] || []).filter((item) => item !== value),
+            };
+          }
+        });
+      }
     } else if (type === 'radio') {
+      setFilters((prevFilters) => ({
+        ...prevFilters,
+        [name]: value,
+      }));
+    } else {
       setFilters((prevFilters) => ({
         ...prevFilters,
         [name]: value,
@@ -60,21 +72,18 @@ function ReservationResultPage() {
       }
     });
 
+  const [showDateForm, setShowDateForm] = useState(false);
+  const [showFilters, setShowFilters] = useState(false);
+
   return (
-    <Container fluid className="reservation-result-page">
+    <Container fluid className="reservation-page">
       <Row>
         <Col md={3} sm={12} xs={12}>
-          <Button
-            variant="outline-primary"
-            className="toggle-date-form"
-            onClick={() => setShowDateForm(!showDateForm)}
-            aria-controls="example-collapse-text"
-            aria-expanded={showDateForm}
-          >
-            Zmień datę rezerwacji
+          <Button className="toggle-date-form" onClick={() => setShowDateForm(!showDateForm)}>
+            Zmień datę rezerwacji <span>{showDateForm ? '▲' : '▼'}</span>
           </Button>
           {showDateForm && (
-            <Form className="date-change-form mt-3">
+            <Form className="date-change-form">
               <Form.Group controlId="formLocation" className="mb-4">
                 <Form.Control as="select" className="custom-select">
                   <option>Wybierz miasto lub lotnisko</option>
@@ -86,7 +95,20 @@ function ReservationResultPage() {
                 type="checkbox" 
                 label="Zwróć samochód w innej lokalizacji" 
                 className="mb-4 form-check" 
+                style={{ marginLeft: '5px' }}
+                checked={filters.returnLocation}
+                onChange={handleFilterChange}
+                name="returnLocation"
               />
+              {filters.returnLocation && (
+                <Form.Group controlId="formReturnLocation" className="mb-4">
+                  <Form.Control as="select" className="custom-select">
+                    <option>Wybierz miasto lub lotnisko</option>
+                    <option>Warszawa, Łużycka 26E</option>
+                    <option>Kraków, Rynek 10</option>
+                  </Form.Control>
+                </Form.Group>
+              )}
               <Form.Group controlId="formPickupDate" className="mb-4">
                 <Form.Label>Data odbioru</Form.Label>
                 <div className="date-time-picker">
@@ -105,21 +127,29 @@ function ReservationResultPage() {
                 type="checkbox" 
                 label="Wiek kierowcy poniżej 21 lat" 
                 className="mb-4 form-check" 
+                checked={filters.ageBelow21}
+                onChange={handleFilterChange}
+                name="ageBelow21"
               />
+              {filters.ageBelow21 && (
+                <Form.Group controlId="formDriverAge" className="mb-4">
+                  <Form.Control as="select" className="custom-select">
+                    <option>Wskaż wiek kierowcy</option>
+                    <option>18</option>
+                    <option>19</option>
+                    <option>20</option>
+                  </Form.Control>
+                </Form.Group>
+              )}
               <Button variant="primary" type="submit" className="search-car">Wyszukaj samochód</Button>
             </Form>
           )}
-          <Button
-            variant="outline-primary"
-            className="toggle-filters"
-            onClick={() => setShowFilters(!showFilters)}
-            aria-controls="filters-form"
-            aria-expanded={showFilters}
-          >
-            Filtry
+
+          <Button className="toggle-filters" onClick={() => setShowFilters(!showFilters)}>
+            Filtry <span>{showFilters ? '▲' : '▼'}</span>
           </Button>
           {showFilters && (
-            <Form className="filter-form filters mt-3">
+            <Form className="filter-form filters">
               <h5 className="section-title">Filtry</h5>
               <Form.Group controlId="formType" className="mb-4">
                 <Form.Label>Typ pojazdu</Form.Label>
@@ -143,12 +173,14 @@ function ReservationResultPage() {
             </Form>
           )}
         </Col>
+
         <Col md={9} sm={12} xs={12}>
+          <h2 className="section-title">Dostępne auta</h2>
           <Row>
             {filteredCars.length > 0 ? (
               filteredCars.map((car, index) => (
                 <Col md={4} sm={6} xs={12} key={index}>
-                  <Card className="car-card mb-4">
+                  <Card className="car-card">
                     <Card.Img variant="top" src={car.imgSrc} alt={car.title} />
                     <Card.Body>
                       <Card.Title>{car.title}</Card.Title>

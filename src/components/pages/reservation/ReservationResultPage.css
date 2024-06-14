@@ -1,4 +1,4 @@
-/* Stylizacja przycisków do rozwijania formularzy */
+/* Styl dla toggle buttonów */
 .toggle-date-form, .toggle-filters {
     display: flex;
     justify-content: space-between;
@@ -13,99 +13,101 @@
     width: 100%;
     text-align: left;
     margin-bottom: 10px;
+    transition: background-color 0.3s ease, color 0.3s ease;
   }
   
-  /* Stylizacja formularzy */
+  .toggle-date-form:hover, .toggle-filters:hover {
+    background-color: #387b9f;
+    color: #fff;
+  }
+  
   .date-change-form, .filter-form {
     margin-top: 20px;
   }
   
-  /* Stylizacja grup formularzy */
   .date-change-form .form-group, .filter-form .form-group {
     margin-bottom: 15px;
   }
   
-  /* Stylizacja etykiet formularzy */
   .date-change-form .form-label, .filter-form .form-label {
     font-weight: bold;
     color: #387b9f;
   }
   
-  /* Stylizacja kontenerów wyboru daty i czasu */
   .date-change-form .date-time-picker, .filter-form .date-time-picker {
     display: flex;
     justify-content: space-between;
   }
   
-  /* Stylizacja pól wyboru daty i czasu */
   .date-change-form .date-picker, .filter-form .date-picker,
   .date-change-form .time-picker, .filter-form .time-picker {
     width: 48%;
   }
   
-  /* Stylizacja nagłówków sekcji filtrów */
   .filters .section-title {
     font-size: 1.2rem;
     font-weight: bold;
     color: #000;
     text-align: left;
-    margin-bottom: 1.2rem;
+    margin-bottom: 1.5rem; /* Większy odstęp między tytułem a formularzem */
   }
   
-  /* Stylizacja etykiet opcji filtrów */
-  .filters .form-check-label {
-    margin-left: 5px;
-  }
-  
-  /* Stylizacja opcji filtrów */
-  .filters .form-check {
-    display: flex;
-    align-items: center;
-    margin-bottom: 0.5rem;
+  .filters .form-group {
+    margin-bottom: 1.5rem;
   }
   
   .filters .form-check-input {
     margin-right: 5px;
   }
   
-  /* Stylizacja opcji radio w filtrach */
+  .filters .form-check-label {
+    font-size: 0.875rem; /* Zmniejszenie czcionki */
+    margin-left: 5px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .filters .form-check {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    white-space: nowrap;
+  }
+  
+  /* Stylizacja dla sekcji filtrów */
+  .filters .form-check,
   .filters .form-radio {
     display: flex;
     align-items: center;
-    margin-bottom: 1rem;
+    margin-bottom: 10px;
   }
   
-  /* Stylizacja przycisków typu checkbox */
-  .filters .form-check-input {
-    background-color: #fff;
-    border: 1px solid #b6dee7;
-    border-radius: 4px;
-    margin-left: 0;
-  }
-  
-  .filters .form-check-input:checked {
-    background-color: #b6dee7;
-    border-color: #b6dee7;
-  }
-  
-  /* Stylizacja przycisków typu radio */
+  .filters .form-check-input, 
   .filters .form-radio-input {
-    background-color: #fff;
-    border: 1px solid #b6dee7;
-    border-radius: 4px;
-    margin-left: 0;
+    margin-right: 10px;
+    width: 20px;
+    height: 20px;
   }
   
-  .filters .form-radio-input:checked {
-    background-color: #b6dee7;
-    border-color: #b6dee7;
+  .filters .form-check-label,
+  .filters .form-radio-label {
+    margin: 0;
+    font-size: 1rem;
+    color: #28292f;
   }
   
-  /* Stylizacja kart samochodów */
+  /* Ustawienie szerokości zdjęcia w karcie samochodu */
+  .car-card img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+  
   .car-card {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 15px;
     justify-content: space-between;
+    margin-bottom: 20px; /* Dodanie marginesu dolnego */
   }
   
   .car-features {
@@ -123,7 +125,6 @@
     margin-top: 1rem;
   }
   
-  /* Stylizacja przycisku promocyjnego */
   .promo-button {
     background-color: #b6dee7;
     color: #28292f;
@@ -142,7 +143,6 @@
     color: #fff;
   }
   
-  /* Stylizacja informacji o braku ofert */
   .no-offers {
     font-size: 1.5rem;
     color: #333;
@@ -150,8 +150,27 @@
     margin-top: 20px;
   }
   
-  /* Dodatkowy odstęp między przyciskiem Wyszukaj samochód a przyciskiem Filtry */
-  .search-car {
-    margin-bottom: 20px; /* Dodany margines dolny */
+  /* Dodatkowe marginesy */
+  .toggle-filters {
+    margin-top: 20px;
+  }
+  
+  /* Stylizacja dla małych ekranów */
+  @media (max-width: 576px) {
+    .reservation-page {
+      padding: 30px 0; /* Zmniejszenie paddingu dla małych ekranów */
+    }
+  
+    .section-title {
+      font-size: 18px; /* Zmniejszenie rozmiaru czcionki nagłówków */
+    }
+  
+    .car-card .card-title {
+      font-size: 14px; /* Zmniejszenie rozmiaru czcionki tytułów */
+    }
+  
+    .car-card .card-text, .car-card .car-price {
+      font-size: 12px; /* Zmniejszenie rozmiaru czcionki tekstu */
+    }
   }
   
