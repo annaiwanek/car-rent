@@ -1,10 +1,157 @@
-/* ReservationResultPage.css */
-.reservation-result-page {
-    padding: 20px;
+/* Stylizacja przycisków do rozwijania formularzy */
+.toggle-date-form, .toggle-filters {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1rem;
+    padding: 10px;
+    background-color: #b6dee7;
+    color: #28292f;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+    margin-bottom: 10px;
   }
   
-  .reservation-result-page h2 {
+  /* Stylizacja formularzy */
+  .date-change-form, .filter-form {
+    margin-top: 20px;
+  }
+  
+  /* Stylizacja grup formularzy */
+  .date-change-form .form-group, .filter-form .form-group {
+    margin-bottom: 15px;
+  }
+  
+  /* Stylizacja etykiet formularzy */
+  .date-change-form .form-label, .filter-form .form-label {
+    font-weight: bold;
+    color: #387b9f;
+  }
+  
+  /* Stylizacja kontenerów wyboru daty i czasu */
+  .date-change-form .date-time-picker, .filter-form .date-time-picker {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  /* Stylizacja pól wyboru daty i czasu */
+  .date-change-form .date-picker, .filter-form .date-picker,
+  .date-change-form .time-picker, .filter-form .time-picker {
+    width: 48%;
+  }
+  
+  /* Stylizacja nagłówków sekcji filtrów */
+  .filters .section-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #000;
+    text-align: left;
+    margin-bottom: 1.2rem;
+  }
+  
+  /* Stylizacja etykiet opcji filtrów */
+  .filters .form-check-label {
+    margin-left: 5px;
+  }
+  
+  /* Stylizacja opcji filtrów */
+  .filters .form-check {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5rem;
+  }
+  
+  .filters .form-check-input {
+    margin-right: 5px;
+  }
+  
+  /* Stylizacja opcji radio w filtrach */
+  .filters .form-radio {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+  
+  /* Stylizacja przycisków typu checkbox */
+  .filters .form-check-input {
+    background-color: #fff;
+    border: 1px solid #b6dee7;
+    border-radius: 4px;
+    margin-left: 0;
+  }
+  
+  .filters .form-check-input:checked {
+    background-color: #b6dee7;
+    border-color: #b6dee7;
+  }
+  
+  /* Stylizacja przycisków typu radio */
+  .filters .form-radio-input {
+    background-color: #fff;
+    border: 1px solid #b6dee7;
+    border-radius: 4px;
+    margin-left: 0;
+  }
+  
+  .filters .form-radio-input:checked {
+    background-color: #b6dee7;
+    border-color: #b6dee7;
+  }
+  
+  /* Stylizacja kart samochodów */
+  .car-card {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    justify-content: space-between;
+  }
+  
+  .car-features {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .car-features li {
+    margin-bottom: 5px;
+  }
+  
+  .car-price {
+    font-size: 1.2rem;
+    color: #333;
+    margin-top: 1rem;
+  }
+  
+  /* Stylizacja przycisku promocyjnego */
+  .promo-button {
+    background-color: #b6dee7;
+    color: #28292f;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    margin-top: 10px;
+  }
+  
+  .promo-button:hover {
+    background-color: #387b9f;
+    color: #fff;
+  }
+  
+  /* Stylizacja informacji o braku ofert */
+  .no-offers {
+    font-size: 1.5rem;
+    color: #333;
     text-align: center;
-    margin-bottom: 20px;
+    margin-top: 20px;
+  }
+  
+  /* Dodatkowy odstęp między przyciskiem Wyszukaj samochód a przyciskiem Filtry */
+  .search-car {
+    margin-bottom: 20px; /* Dodany margines dolny */
   }
   

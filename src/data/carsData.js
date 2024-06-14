@@ -59,7 +59,6 @@ const carsData = [
     categories: ["SUV", "Personal"],
     specs: { transmission: "automatic" }
   },
-
   {
     title: "Ford Transit",
     imgSrc: "/image/fordTransit.webp",
@@ -98,7 +97,7 @@ const carsData = [
   },
   {
     title: "Mercedes Sprinter",
-    description: "Idealny do przewozu towarów w mieście i na długie trasy",
+  
     imgSrc: "/image/mercedesSprinter.webp",
     price: "150 PLN",
     features: ["Bezpłatne odwołanie rezerwacji", "Bez limitu km"],
@@ -108,7 +107,6 @@ const carsData = [
   },
   {
     title: "Fiat Ducato",
-    description: "Idealny do przewozu towarów w mieście i na długie trasy",
     imgSrc: "/image/fiatDucato2.webp",
     price: "200 PLN",
     features: ["Bezpłatne odwołanie rezerwacji", "Bez limitu km"],
@@ -118,7 +116,6 @@ const carsData = [
   },
   {
     title: "Fiat Ducato",
-    description: "Idealny do przewozu towarów w mieście i na długie trasy",
     imgSrc: "/image/fiatDucato.webp",
     price: "200 PLN",
     features: ["Bezpłatne odwołanie rezerwacji", "Bez limitu km"],
