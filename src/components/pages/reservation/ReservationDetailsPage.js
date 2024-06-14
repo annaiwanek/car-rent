@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Container, Row, Col, Card, Button, Form } from 'react-bootstrap';
 import { useLocation } from 'react-router-dom';
 import carsData from '../../../data/carsData';
@@ -7,6 +7,7 @@ import './ReservationDetailsPage.css';
 function ReservationDetailsPage() {
   const location = useLocation();
   const car = location.state ? location.state.car : carsData[0]; // Fallback to first car if no state is passed
+  const [showAdditionalOptions, setShowAdditionalOptions] = useState(false);
 
   return (
     <Container className="reservation-details-page">
@@ -98,15 +99,20 @@ function ReservationDetailsPage() {
       </Card>
       <Card className="additional-services">
         <h5>Wybierz dodatkowe opcje</h5>
-        <Button className="toggle-additional-options">
-          Dodatkowe opcje <span>▼</span>
+        <Button
+          className="toggle-additional-options"
+          onClick={() => setShowAdditionalOptions(!showAdditionalOptions)}
+        >
+          Dodatkowe opcje <span>{showAdditionalOptions ? '▲' : '▼'}</span>
         </Button>
-        <Form className="additional-options-form">
-          <Form.Check
-            type="checkbox"
-            label="Końcowe mycie pojazdu za 39 PLN"
-          />
-        </Form>
+        {showAdditionalOptions && (
+          <Form className="additional-options-form">
+            <Form.Check
+              type="checkbox"
+              label="Końcowe mycie pojazdu za 39 PLN"
+            />
+          </Form>
+        )}
       </Card>
       <Button variant="primary" className="proceed-button">
         Dalej
