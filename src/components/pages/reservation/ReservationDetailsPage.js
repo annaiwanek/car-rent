@@ -7,7 +7,12 @@ import './ReservationDetailsPage.css';
 function ReservationDetailsPage() {
   const location = useLocation();
   const car = location.state ? location.state.car : carsData[0]; // Fallback to first car if no state is passed
-  const [showAdditionalOptions, setShowAdditionalOptions] = useState(false);
+  const [selectedOption, setSelectedOption] = useState('standard');
+  const [showAdditionalOptions, setShowAdditionalOptions] = useState(false); // Zmienna stanu
+
+  const handleOptionChange = (e) => {
+    setSelectedOption(e.target.value);
+  };
 
   return (
     <Container className="reservation-details-page">
@@ -46,54 +51,56 @@ function ReservationDetailsPage() {
           </Card>
         </Col>
       </Row>
-      <h5 className="section-subtitle">Wybierz usługi dodatkowe</h5>
       <Card className="additional-services">
         <h5>Wybierz pakiet ochronny</h5>
         <Row>
-          <Col md={3}>
-            <div className="service-option">
-              <Form.Check
-                type="radio"
-                name="insurance"
-                label="Pakiet zniesienia odpowiedzialności STANDARD W CENIE"
-                checked
-              />
-              <p>Podstawowe ubezpieczenie OC, AC i NW gwarantujące bezpieczne użytkowanie pojazdu.</p>
-              <p className="service-price">Cena: W CENIE</p>
-            </div>
+          <Col md={3} className={`service-option ${selectedOption === 'standard' ? 'selected' : ''}`}>
+            <Form.Check
+              type="radio"
+              name="insurance"
+              value="standard"
+              label={<strong>Pakiet zniesienia odpowiedzialności STANDARD W CENIE</strong>}
+              checked={selectedOption === 'standard'}
+              onChange={handleOptionChange}
+            />
+            <p>&#10003; Podstawowe ubezpieczenie OC, AC i NW gwarantujące bezpieczne użytkowanie pojazdu.</p>
+            <p className="service-price">Cena: W CENIE</p>
           </Col>
-          <Col md={3}>
-            <div className="service-option">
-              <Form.Check
-                type="radio"
-                name="insurance"
-                label="Pakiet zniesienia odpowiedzialności GOLD +39 PLN"
-              />
-              <p>Opcja ubezpieczenie w wersji Gold gwarantuje zniesienie udziału własnego w szkodach AC do 0 zł.</p>
-              <p className="service-price">Cena: +39 PLN</p>
-            </div>
+          <Col md={3} className={`service-option ${selectedOption === 'gold' ? 'selected' : ''}`}>
+            <Form.Check
+              type="radio"
+              name="insurance"
+              value="gold"
+              label={<strong>Pakiet zniesienia odpowiedzialności GOLD +39 PLN</strong>}
+              checked={selectedOption === 'gold'}
+              onChange={handleOptionChange}
+            />
+            <p>&#10003; Opcja ubezpieczenie w wersji Gold gwarantuje zniesienie udziału własnego w szkodach AC do 0 zł.</p>
+            <p className="service-price">Cena: +39 PLN</p>
           </Col>
-          <Col md={3}>
-            <div className="service-option">
-              <Form.Check
-                type="radio"
-                name="insurance"
-                label="Pakiet zniesienia odpowiedzialności GOLD EU +89 PLN"
-              />
-              <p>Opcja ubezpieczenie w wersji Gold EU gwarantuje zniesienie udziału własnego w szkodach AC do 0 zł.</p>
-              <p className="service-price">Cena: +89 PLN</p>
-            </div>
+          <Col md={3} className={`service-option ${selectedOption === 'gold-eu' ? 'selected' : ''}`}>
+            <Form.Check
+              type="radio"
+              name="insurance"
+              value="gold-eu"
+              label={<strong>Pakiet zniesienia odpowiedzialności GOLD EU +89 PLN</strong>}
+              checked={selectedOption === 'gold-eu'}
+              onChange={handleOptionChange}
+            />
+            <p>&#10003; Opcja ubezpieczenie w wersji Gold EU gwarantuje zniesienie udziału własnego w szkodach AC do 0 zł.</p>
+            <p className="service-price">Cena: +89 PLN</p>
           </Col>
-          <Col md={3}>
-            <div className="service-option">
-              <Form.Check
-                type="radio"
-                name="insurance"
-                label="Wyjazd za granicę w strefie 1 +149 PLN"
-              />
-              <p>Opcja wyjazdu za granicę w strefie 1.</p>
-              <p className="service-price">Cena: +149 PLN</p>
-            </div>
+          <Col md={3} className={`service-option ${selectedOption === 'abroad' ? 'selected' : ''}`}>
+            <Form.Check
+              type="radio"
+              name="insurance"
+              value="abroad"
+              label={<strong>Wyjazd za granicę w strefie 1 +149 PLN</strong>}
+              checked={selectedOption === 'abroad'}
+              onChange={handleOptionChange}
+            />
+            <p>&#10003; Opcja wyjazdu za granicę w strefie 1.</p>
+            <p className="service-price">Cena: +149 PLN</p>
           </Col>
         </Row>
       </Card>
