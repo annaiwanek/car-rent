@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Container, Row, Col, Card, Form, Button } from 'react-bootstrap';
 import carsData from '../../../data/carsData'; // Import danych samochodów
 import './ReservationPage.css';
@@ -11,6 +12,8 @@ function ReservationPage() {
     returnLocation: false,
     ageBelow21: false,
   });
+
+  const navigate = useNavigate();
 
   const handleFilterChange = (e) => {
     const { name, value, checked, type } = e.target;
@@ -58,7 +61,7 @@ function ReservationPage() {
 
   const handleSearch = (e) => {
     e.preventDefault();
-    window.location.reload(); // Przeładowanie strony
+    navigate('/reservation-result');
   };
 
   const filteredCars = carsData

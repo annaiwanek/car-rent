@@ -14,6 +14,7 @@ import LoginRegister from './components/firebase/LoginRegister';
 import PrivateRoute from './components/routes/PrivateRoute';
 import AccountPage from './components/pages/account/AccountPage'; 
 import { AuthProvider } from './components/firebase/AuthContext'; 
+import ReservationResultPage from './components/pages/reservation/ReservationResultPage';
 
 function App() {
   return (
@@ -33,8 +34,9 @@ function App() {
             <Route path="login" element={<LoginRegister />} />
             <Route path="register" element={<LoginRegister />} />
             <Route path="account" element={<PrivateRoute />}>
-              <Route path="" element={<AccountPage />} />
+            <Route path="" element={<AccountPage />} />
             </Route>
+            <Route path="reservation-result" element={<ReservationResultPage />} />
           </Route>
         </Routes>
       </Router>
