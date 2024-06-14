@@ -16,6 +16,7 @@ import AccountPage from './components/pages/account/AccountPage';
 import { AuthProvider } from './components/firebase/AuthContext'; 
 import ReservationResultPage from './components/pages/reservation/ReservationResultPage';
 import ReservationDetailsPage from './components/pages/reservation/ReservationDetailsPage';
+import ReservationFormPage from './components/pages/reservation/ReservationFormPage';
 
 function App() {
   return (
@@ -39,6 +40,7 @@ function App() {
             </Route>
             <Route path="reservation-result" element={<ReservationResultPage />} />
             <Route path="reservation-details" element={<ReservationDetailsPage />} />
+            <Route path="dane" element={<ReservationFormPage />} />
           </Route>
         </Routes>
       </Router>

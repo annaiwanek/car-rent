@@ -1,0 +1,54 @@
+.reservation-form-page {
+    margin-top: 30px;
+  }
+  
+  .section-title {
+    font-size: 1.75rem;
+    font-weight: bold;
+    color: #387b9f;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .reservation-form .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .reservation-summary, .additional-info {
+    background-color: #f0f9fb;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .reservation-summary h5, .additional-info h5 {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #387b9f;
+    margin-bottom: 15px;
+  }
+  
+  .reservation-summary p, .additional-info p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 10px;
+  }
+  
+  .confirm-button {
+    background-color: #b6dee7;
+    color: #28292f;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.25rem;
+    font-weight: bold;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    margin-top: 30px;
+  }
+  
+  .confirm-button:hover {
+    background-color: #387b9f;
+    color: #fff;
+  }
+  
