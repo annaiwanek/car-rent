@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Container, Row, Col, Card, Form, Button, Accordion } from 'react-bootstrap';
+import { Container, Row, Col, Card, Form, Button } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
 import carsData from '../../../data/carsData'; // Import danych samochodów
 import './ReservationResultPage.css';
 
@@ -74,6 +75,7 @@ function ReservationResultPage() {
 
   const [showDateForm, setShowDateForm] = useState(false);
   const [showFilters, setShowFilters] = useState(false);
+  const navigate = useNavigate();
 
   return (
     <Container fluid className="reservation-page">
@@ -149,7 +151,7 @@ function ReservationResultPage() {
             Filtry <span>{showFilters ? '▲' : '▼'}</span>
           </Button>
           {showFilters && (
-            <Form className="filter-form filters">
+            <Form className="filter-form">
               <h5 className="section-title">Filtry</h5>
               <Form.Group controlId="formType" className="mb-4">
                 <Form.Label>Typ pojazdu</Form.Label>
@@ -191,7 +193,13 @@ function ReservationResultPage() {
                         ))}
                       </ul>
                       <p className="car-price">Cena: {car.price} za 1 dzień</p>
-                      <Button variant="primary" href={car.link} className="promo-button">Zarezerwuj teraz</Button>
+                      <Button
+                        variant="primary"
+                        className="promo-button"
+                        onClick={() => navigate('/reservation-details', { state: { car } })}
+                      >
+                        Zarezerwuj teraz
+                      </Button>
                     </Card.Body>
                   </Card>
                 </Col>
