@@ -8,38 +8,57 @@ function ReservationPage() {
     type: [],
     transmission: [],
     price: '',
+    returnLocation: false,
+    ageBelow21: false,
   });
 
   const handleFilterChange = (e) => {
     const { name, value, checked, type } = e.target;
 
     if (type === 'checkbox') {
-      setFilters((prevFilters) => {
-        if (value === "all" && checked) {
-          return {
-            ...prevFilters,
-            type: [],
-          };
-        }
+      if (name === 'returnLocation' || name === 'ageBelow21') {
+        setFilters((prevFilters) => ({
+          ...prevFilters,
+          [name]: checked,
+        }));
+      } else {
+        setFilters((prevFilters) => {
+          if (value === 'all' && checked) {
+            return {
+              ...prevFilters,
+              type: [],
+            };
+          }
 
-        if (checked) {
-          return {
-            ...prevFilters,
-            [name]: [...prevFilters[name], value],
-          };
-        } else {
-          return {
-            ...prevFilters,
-            [name]: prevFilters[name].filter((item) => item !== value),
-          };
-        }
-      });
+          if (checked) {
+            return {
+              ...prevFilters,
+              [name]: [...(prevFilters[name] || []), value],
+            };
+          } else {
+            return {
+              ...prevFilters,
+              [name]: (prevFilters[name] || []).filter((item) => item !== value),
+            };
+          }
+        });
+      }
     } else if (type === 'radio') {
       setFilters((prevFilters) => ({
         ...prevFilters,
         [name]: value,
       }));
+    } else {
+      setFilters((prevFilters) => ({
+        ...prevFilters,
+        [name]: value,
+      }));
     }
+  };
+
+  const handleSearch = (e) => {
+    e.preventDefault();
+    window.location.reload(); // Przeładowanie strony
   };
 
   const filteredCars = carsData
@@ -62,7 +81,7 @@ function ReservationPage() {
     <Container fluid className="reservation-page">
       <Row>
         <Col md={3} sm={12} xs={12}>
-          <Form className="filter-form reservation-form">
+          <Form className="filter-form reservation-form" onSubmit={handleSearch}>
             <h5 className="section-title">Szczegóły rezerwacji</h5>
             <Form.Group controlId="formLocation" className="mb-4">
               <Form.Control as="select" className="custom-select">
@@ -76,7 +95,19 @@ function ReservationPage() {
               label="Zwróć samochód w innej lokalizacji" 
               className="mb-4 form-check" 
               style={{ marginLeft: '5px' }}
+              checked={filters.returnLocation}
+              onChange={handleFilterChange}
+              name="returnLocation"
             />
+            {filters.returnLocation && (
+              <Form.Group controlId="formReturnLocation" className="mb-4">
+                <Form.Control as="select" className="custom-select">
+                  <option>Wybierz miasto lub lotnisko</option>
+                  <option>Warszawa, Łużycka 26E</option>
+                  <option>Kraków, Rynek 10</option>
+                </Form.Control>
+              </Form.Group>
+            )}
             <Form.Group controlId="formPickupDate" className="mb-4">
               <Form.Label>Data odbioru</Form.Label>
               <div className="date-time-picker">
@@ -95,7 +126,20 @@ function ReservationPage() {
               type="checkbox" 
               label="Wiek kierowcy poniżej 21 lat" 
               className="mb-4 form-check" 
+              checked={filters.ageBelow21}
+              onChange={handleFilterChange}
+              name="ageBelow21"
             />
+            {filters.ageBelow21 && (
+              <Form.Group controlId="formDriverAge" className="mb-4">
+                <Form.Control as="select" className="custom-select">
+                  <option>Wskaż wiek kierowcy</option>
+                  <option>18</option>
+                  <option>19</option>
+                  <option>20</option>
+                </Form.Control>
+              </Form.Group>
+            )}
             <Button variant="primary" type="submit" className="search-car">Wyszukaj samochód</Button>
           </Form>
           <Form className="filter-form filters mt-5">
