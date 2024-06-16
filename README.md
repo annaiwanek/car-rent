@@ -1,6 +1,11 @@
 # Getting Started with Create React App
+Welcome to Car-Rent, a web application for easy car rentals.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## User Authentication
+
+Secure login and registration for users. Car Listing: Browse a wide range of available cars for rent. Booking System: Reserve cars for specific dates and times. Firebase Integration: Use Firebase for data storage and authentication. Getting Started This project was bootstrapped with Create React App.
 
 ## Available Scripts
 
